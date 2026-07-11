@@ -4,11 +4,16 @@ const menuButton = document.getElementById('menuButton');
 const menuPanel = document.getElementById('menuPanel');
 const menuScrim = document.getElementById('menuScrim');
 let data;
+let currentView = 'home';
+let selectedFieldId = null;
+let activeFilters = { season: 'すべて', tide: 'すべて', condition: 'すべて' };
 
 const esc = (v = '') => String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const list = items => `<ul class="plain-list">${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
 const viewHead = (kicker, title, lead='') => `<header class="view-head"><p class="view-kicker">${esc(kicker)}</p><h1>${esc(title)}</h1>${lead ? `<p class="view-lead">${esc(lead)}</p>` : ''}</header>`;
 const zone = (label, title, body) => `<section class="zone"><p class="zone-label">${esc(label)}</p><div class="zone-content"><h2>${esc(title)}</h2>${body}</div></section>`;
+const fieldById = id => data.fields.find(f => f.id === id);
+const logsForField = id => data.logs.filter(l => l.fieldId === id).sort((a,b)=>b.date.localeCompare(a.date));
 
 function closeMenu() {
   menuPanel.classList.remove('open'); menuScrim.classList.remove('open'); menuButton.classList.remove('open');
@@ -21,27 +26,70 @@ function toggleMenu() {
 }
 menuButton.addEventListener('click', toggleMenu); menuScrim.addEventListener('click', closeMenu);
 
+function logCard(l) {
+  return `<article class="log-entry"><div class="log-entry-head"><time>${esc(l.date)}<br>${esc(l.time || '')}</time><div><h3>${esc(l.place)}</h3><div class="tagline">${[l.season,l.tide,l.phase,l.water,l.bait].filter(Boolean).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><dl class="log-facts"><dt>釣り方</dt><dd>${esc(l.method)}</dd><dt>結果</dt><dd>${esc(l.result)}</dd></dl><p class="log-conclusion"><strong>今日の結論：</strong>${esc(l.conclusion)}</p></div></div></article>`;
+}
+
 function homeView() {
+  const recent = [...data.logs].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
   return `${viewHead('OVERVIEW','ホーム','直近の結論、次回の検証、プロジェクト全体の状態。')}
     <section class="conclusion"><p class="label">今日の結論</p><h2>${esc(data.today.conclusion)}</h2><p class="basis">根拠：${esc(data.today.basis)}</p></section>
     ${zone('NEXT','次回試すこと', list(data.nextActions))}
     ${zone('FOUND','今回の発見', list(data.discoveries))}
-    ${zone('STATUS','現在の状態', `<div class="metrics"><div class="metric"><strong>${data.project.sessionCount}</strong><span>記録済み釣行</span></div><div class="metric"><strong>${data.fields.reduce((a,b)=>a+b.observations,0)}</strong><span>フィールド観測</span></div></div>`)}
+    ${zone('STATUS','現在の状態', `<div class="metrics"><div class="metric"><strong>${data.logs.length}</strong><span>記録済み釣行</span></div><div class="metric"><strong>${data.fields.reduce((a,b)=>a+b.observations,0)}</strong><span>フィールド観測</span></div></div>`)}
+    <div class="section-title"><h2>最近の釣行</h2><span>日付順</span></div>${recent.map(logCard).join('')}
     ${zone('RULE','記録のルール', `<ul class="rule-list">${data.project.rules.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)}`;
 }
 
-function fieldView() {
-  return `${viewHead('FIELD DATABASE','フィールド','場所ごとの確認済み事項、成立条件、未解明点。')}
-    ${data.fields.map(f => `<article class="record"><div class="record-head"><h2>${esc(f.name)}</h2><div class="record-meta">観測 ${f.observations}回</div></div><div class="tagline">${(f.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="record-grid"><div class="record-block"><h3>強い条件</h3><p>${esc(f.strong)}</p></div><div class="record-block"><h3>狙い</h3><p>${esc(f.target)}</p></div><div class="record-block"><h3>確認済み</h3>${list(f.known)}</div><div class="record-block"><h3>まだ分からないこと</h3>${list(f.unknown)}</div></div></article>`).join('')}`;
+function fieldIndexView() {
+  return `${viewHead('FIELD DATABASE','フィールド','場所ごとのストラテジーと、過去の釣行を同じページで確認する。')}
+    <section class="field-index">${data.fields.map(f => `<button class="field-link" data-field-id="${esc(f.id)}"><strong>${esc(f.name)}</strong><span>${logsForField(f.id).length} LOG / 観測 ${f.observations}</span></button>`).join('')}</section>`;
 }
 
-function strategyView() {
+function fieldDetailView(fieldId) {
+  const f = fieldById(fieldId);
+  if (!f) return fieldIndexView();
+  const logs = logsForField(fieldId);
+  const seasonRows = (f.seasonStrategy || []).map(i=>`<dl class="strategy-row"><dt>${esc(i.label)}</dt><dd>${esc(i.text)}</dd></dl>`).join('');
+  return `<div class="back-row"><button class="text-button" data-back-field>← フィールド一覧</button></div>
+    ${viewHead('FIELD DETAIL',f.name,`${f.summary}　観測 ${f.observations}回。`)}
+    <div class="tagline">${(f.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+    ${zone('CONDITION','強い条件', `<p>${esc(f.strong)}</p>`)}
+    ${zone('TARGET','狙い', `<p>${esc(f.target)}</p>`)}
+    <section class="strategy-block"><h2>シーズン別ストラテジー</h2>${seasonRows || '<p class="empty">まだ記録がありません。</p>'}</section>
+    <div class="record-grid"><div class="record-block"><h3>分かったこと</h3>${list(f.known)}</div><div class="record-block"><h3>まだ分からないこと</h3>${list(f.unknown)}</div></div>
+    <div class="section-title"><h2>この場所の釣行履歴</h2><span>新しい順</span></div>
+    ${logs.length ? logs.map(logCard).join('') : '<p class="empty">この場所の釣行ログはまだありません。</p>'}`;
+}
+
+function fieldView() { return selectedFieldId ? fieldDetailView(selectedFieldId) : fieldIndexView(); }
+
+function strategyInfo() {
   const group = (title, items) => `<section class="strategy-block"><h2>${esc(title)}</h2>${items.map(i=>`<dl class="strategy-row"><dt>${esc(i.label)}</dt><dd>${esc(i.text)}</dd></dl>`).join('')}</section>`;
-  return `${viewHead('STRATEGY','ストラテジー','潮回り、季節、水の状態から、場所とアプローチを絞る。')}
-    ${group('今夜の即断', data.strategy.quick)}
-    ${group('潮回り別', data.strategy.tide)}
-    ${group('シーズン別', data.strategy.season)}
-    ${group('見切り基準', data.strategy.exit)}`;
+  return `${group('今夜の即断', data.strategy.quick)}${group('潮回り別', data.strategy.tide)}${group('シーズン別', data.strategy.season)}${group('見切り基準', data.strategy.exit)}`;
+}
+function filterButtons(key, values) {
+  return `<div class="filter-row">${values.map(v=>`<button class="filter-button ${activeFilters[key]===v?'active':''}" data-filter-key="${key}" data-filter-value="${esc(v)}">${esc(v)}</button>`).join('')}</div>`;
+}
+function filteredLogs() {
+  return [...data.logs].filter(l =>
+    (activeFilters.season === 'すべて' || l.season === activeFilters.season) &&
+    (activeFilters.tide === 'すべて' || l.tide === activeFilters.tide) &&
+    (activeFilters.condition === 'すべて' || (l.conditions || []).includes(activeFilters.condition))
+  ).sort((a,b)=>b.date.localeCompare(a.date));
+}
+function strategyView() {
+  const seasons = ['すべて', ...new Set(data.logs.map(l=>l.season).filter(Boolean))];
+  const tides = ['すべて', ...new Set(data.logs.map(l=>l.tide).filter(Boolean))];
+  const conditions = ['すべて', ...new Set(data.logs.flatMap(l=>l.conditions || []))];
+  const logs = filteredLogs();
+  return `${viewHead('STRATEGY','ストラテジー','条件から釣り場と過去ログを逆引きする。')}
+    ${strategyInfo()}
+    <div class="section-title"><h2>条件から過去ログを見る</h2><span>${logs.length}件</span></div>
+    <section class="filter-group"><h2>季節</h2>${filterButtons('season', seasons)}</section>
+    <section class="filter-group"><h2>潮回り</h2>${filterButtons('tide', tides)}</section>
+    <section class="filter-group"><h2>条件</h2>${filterButtons('condition', conditions)}</section>
+    ${logs.length ? logs.map(logCard).join('') : '<p class="empty">該当する釣行ログはありません。</p>'}`;
 }
 
 function operationView() {
@@ -57,17 +105,20 @@ function tackleView() {
     ${zone('NOTE','管理メモ', list(data.tackle.notes))}`;
 }
 
-function logView() {
-  return `${viewHead('FIELD LOG','ログ','釣果より、次回の再現性につながる事実を優先して残す。')}
-    ${data.logs.map((l,i)=>`<article class="record"><div class="record-head"><h2>${esc(l.place)}</h2><div class="record-meta">#${String(data.logs.length-i).padStart(3,'0')}<br>${esc(l.date)}</div></div><div class="record-grid"><div class="record-block"><h3>結果</h3><p>${esc(l.result)}</p></div><div class="record-block"><h3>今日の結論</h3><p>${esc(l.conclusion)}</p></div></div></article>`).join('')}`;
-}
-
-const views = { home: homeView, field: fieldView, strategy: strategyView, operation: operationView, tackle: tackleView, log: logView };
-function render(view='home') {
+const views = { home: homeView, field: fieldView, strategy: strategyView, operation: operationView, tackle: tackleView };
+function render(view=currentView) {
+  currentView = view;
   document.querySelectorAll('.menu-panel button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
   app.innerHTML = views[view](); closeMenu(); window.scrollTo({top:0,behavior:'instant'});
 }
-document.querySelector('.menu-panel nav').addEventListener('click', e=>{ const btn=e.target.closest('button[data-view]'); if(btn) render(btn.dataset.view); });
+document.querySelector('.menu-panel nav').addEventListener('click', e=>{ const btn=e.target.closest('button[data-view]'); if(btn){ if(btn.dataset.view !== 'field') selectedFieldId = null; render(btn.dataset.view); } });
+app.addEventListener('click', e=>{
+  const fieldBtn = e.target.closest('[data-field-id]');
+  if(fieldBtn){ selectedFieldId = fieldBtn.dataset.fieldId; render('field'); return; }
+  if(e.target.closest('[data-back-field]')){ selectedFieldId = null; render('field'); return; }
+  const filterBtn = e.target.closest('[data-filter-key]');
+  if(filterBtn){ activeFilters[filterBtn.dataset.filterKey] = filterBtn.dataset.filterValue; render('strategy'); }
+});
 
 fetch('data.json',{cache:'no-store'}).then(r=>{if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json();}).then(json=>{
   data=json; meta.innerHTML=`更新 ${esc(data.project.updated)}<br>v${esc(data.project.version)}`; render('home');
