@@ -1,11 +1,1 @@
-{
-  "name": "TROPHY FIELD LOG",
-  "short_name": "TROPHY",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f1f0ec",
-  "theme_color": "#171717",
-  "icons": [
-    {"src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
-  ]
-}
+{"name":"TROPHY FIELD LAB","short_name":"TROPHY","start_url":"./","display":"standalone","background_color":"#f1f0ec","theme_color":"#171717","icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml"}]}

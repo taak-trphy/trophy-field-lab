@@ -1,27 +1,16 @@
-# TROPHY FIELD LOG
+# TROPHY FIELD LAB
 
-東京湾奥K9フィールドログの初期ファイルです。
+GitHub Pages用のスマホ向けフィールドログです。
 
-## 初回アップロード
+## 更新方法
 
-このフォルダ内のファイルを、GitHubリポジトリ `trophy-field-log` のルートへそのままアップロードしてください。
+リポジトリ直下の以下を差し替えてコミットします。
 
-- `index.html`
-- `style.css`
-- `app.js`
-- `data.json`
-- `manifest.webmanifest`
-- `assets/icon.svg`
+- index.html
+- style.css
+- app.js
+- data.json
+- manifest.webmanifest
+- assets/icon.svg
 
-GitHub Pagesが `main / (root)` に設定されていれば、数分後に以下のURLで表示されます。
-
-`https://GitHubユーザー名.github.io/trophy-field-log/`
-
-## 日常更新
-
-表示内容は原則として `data.json` の差し替えだけで更新できます。
-Makeによる自動更新も、最終的にはこの `data.json` を更新する設計にします。
-
-## バージョン
-
-初期版: `0.1.0`
+日常的な内容更新は `data.json` の差し替えだけで反映できます。
