@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#171717" />
-  <meta name="description" content="東京湾奥フィールドログ" />
+  <meta name="theme-color" content="#efeee9" />
+  <meta name="description" content="東京湾奥フィールドラボ" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
@@ -12,26 +12,26 @@
 </head>
 <body>
   <header class="site-header">
-    <button class="menu-button" id="menuButton" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
-    <div class="brand-block">
-      <p class="brand">TROPHY</p>
-      <p class="subbrand">FIELD LAB</p>
-    </div>
-    <div class="meta" id="meta"></div>
+    <a class="brand-lockup" href="#" data-view-link="home" aria-label="ホームへ">
+      <span class="brand">TROPHY</span>
+      <span class="subbrand">FIELD LAB</span>
+    </a>
+    <div class="header-meta" id="meta"></div>
+    <button class="menu-button" id="menuButton" aria-label="メニューを開く" aria-expanded="false">
+      <span>MENU</span><i></i>
+    </button>
   </header>
 
   <aside class="menu-panel" id="menuPanel" aria-hidden="true">
-    <div class="menu-inner">
-      <p class="menu-label">INDEX</p>
-      <nav aria-label="メインナビゲーション">
-        <button data-view="home">ホーム</button>
-        <button data-view="field">フィールド</button>
-        <button data-view="strategy">ストラテジー</button>
-        <button data-view="operation">操作</button>
-        <button data-view="tackle">タックル</button>
-      </nav>
-      <p class="menu-note">記録するのは感想ではなく、再現できる事実。</p>
-    </div>
+    <div class="menu-top"><span>TROPHY / INDEX</span><button id="menuClose" aria-label="メニューを閉じる">CLOSE</button></div>
+    <nav aria-label="メインナビゲーション">
+      <button data-view="home"><em>01</em><span>ホーム</span><small>現在地と次の検証</small></button>
+      <button data-view="field"><em>02</em><span>フィールド</span><small>場所から知見と履歴を見る</small></button>
+      <button data-view="strategy"><em>03</em><span>ストラテジー</span><small>条件から過去ログを逆引き</small></button>
+      <button data-view="operation"><em>04</em><span>操作</span><small>操作基準と未解決課題</small></button>
+      <button data-view="tackle"><em>05</em><span>タックル</span><small>構成とメンテナンス</small></button>
+    </nav>
+    <p class="menu-note">記録するのは感想ではなく、再現できる事実。</p>
   </aside>
   <div class="menu-scrim" id="menuScrim"></div>
 
@@ -39,6 +39,7 @@
     <section class="loading">読み込み中...</section>
   </main>
 
+  <footer class="site-footer"><span>TROPHY FIELD LAB</span><span>Tokyo Bay / Personal Archive</span></footer>
   <script src="app.js" defer></script>
 </body>
 </html>
