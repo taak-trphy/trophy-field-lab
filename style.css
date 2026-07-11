@@ -71,3 +71,9 @@
   .archive-detail{margin-left:44px}
   .archive-detail dl>div{grid-template-columns:1fr;gap:5px}
 }
+
+/* v0.6.8 log titles and simplified home */
+.home-statement{padding-top:clamp(58px,9vw,110px)}
+.log-place{margin:0 0 6px;color:var(--muted);font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.archive-place{display:block;margin-top:6px;color:var(--muted);font-size:10px;line-height:1.6;letter-spacing:.03em}
+@media(max-width:500px){.home-statement{padding-top:44px}}
