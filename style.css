@@ -2,3 +2,42 @@
 
 .refresh-button{display:flex;align-items:center;gap:7px;border:0;background:transparent;padding:7px 2px;font-size:9px;font-weight:700;letter-spacing:.14em;cursor:pointer;color:var(--muted)}.refresh-button i{font-style:normal;font-size:16px;line-height:1;transition:transform .4s ease}.refresh-button.loading i{animation:refresh-spin .75s linear infinite}.refresh-button.updated{color:var(--ink)}.update-toast{position:fixed;right:clamp(18px,4vw,54px);bottom:calc(20px + env(safe-area-inset-bottom));z-index:70;transform:translateY(12px);opacity:0;pointer-events:none;background:var(--ink);color:var(--white);padding:10px 13px;font-size:9px;letter-spacing:.12em;transition:opacity .2s ease,transform .2s ease}.update-toast.show{opacity:1;transform:none}@keyframes refresh-spin{to{transform:rotate(360deg)}}
 @media(max-width:760px){.refresh-button span{display:none}.refresh-button{padding-left:5px;padding-right:5px}}
+
+/* v0.6.6 mobile header and typography adjustments */
+@media(max-width:760px){
+  .site-header{
+    grid-template-columns:minmax(0,1fr) 40px auto;
+    gap:10px;
+    padding-top:calc(12px + env(safe-area-inset-top));
+    padding-bottom:12px;
+  }
+  .brand-lockup{min-width:0;gap:8px;white-space:nowrap;overflow:hidden}
+  .brand{font-size:16px;letter-spacing:.15em}
+  .subbrand{font-size:8px;letter-spacing:.2em;overflow:hidden;text-overflow:ellipsis}
+  .refresh-button{
+    width:40px;
+    height:40px;
+    padding:0;
+    justify-content:center;
+    flex:0 0 40px;
+  }
+  .refresh-button i{font-size:18px}
+  .menu-button{
+    height:40px;
+    padding:0 0 0 6px;
+    white-space:nowrap;
+    align-self:center;
+  }
+  .menu-button i{width:20px}
+  .app{padding-bottom:80px}
+  .hero{padding-top:48px}
+  .statement h2{font-size:clamp(22px,6.1vw,30px);line-height:1.42;letter-spacing:-.025em}
+}
+@media(max-width:390px){
+  .site-header{grid-template-columns:minmax(0,1fr) 38px 58px;gap:7px;padding-left:14px;padding-right:14px}
+  .brand{font-size:15px}
+  .subbrand{font-size:7px;letter-spacing:.17em}
+  .menu-button{font-size:9px;gap:7px}
+  .menu-button i{width:18px}
+  .hero h1,.view-intro h1{font-size:47px}
+}
