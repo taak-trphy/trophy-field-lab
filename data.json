@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "0.6.8",
+    "version": "0.8.0",
     "updated": "2026.07.11",
     "sessionCount": 10,
     "rules": [
@@ -387,7 +387,73 @@
     ]
   },
   "tackle": {
-    "main": "TULALA MonstoroG 75HC / Ambassadeur 5501CS Rocket 5.3:1 / PE6号 100m / ナイロン60lb 約100cm",
+    "main": "TULALA MonstoroG 75HC / Ambassadeur 5501CS Rocket 5.3:1 / VARIVAS PE Max Power X8 6号 100m / ナイロン60lb 約100cm",
+    "system": [
+      {
+        "label": "ROD",
+        "name": "TULALA MonstoroG 75HC",
+        "note": "岸からのK9を中心に、近〜中距離の操作とクランキングに使用。"
+      },
+      {
+        "label": "REEL",
+        "name": "Ambassadeur 5501CS Rocket",
+        "note": "5.3:1、実巻取量約65cm。BOREDケミカルでメンテナンス。"
+      },
+      {
+        "label": "MAIN LINE",
+        "name": "VARIVAS PE Max Power X8 6号",
+        "note": "100m。勝島釣行後は汚れ・油膜・毛羽立ちを触感で確認。"
+      },
+      {
+        "label": "LEADER",
+        "name": "ナイロン 60lb",
+        "note": "最終約100cm。毎釣行交換するため継続管理の対象外。"
+      },
+      {
+        "label": "CONNECTION",
+        "name": "ソリッドリング＋Ocean Snap OS3 / OS4",
+        "note": "スナップは逆向き装着。ノットはトップガイド直近を避ける。"
+      }
+    ],
+    "lures": [
+      {
+        "group": "K9 LOW",
+        "items": "SIREN / レッドヘッド / マジックトラウト / 256 / Bella（予備）",
+        "note": "リップスロットはエポキシ防水。前後フック1/0。腹部ウェイト2.5〜3g。"
+      },
+      {
+        "group": "K9 HI",
+        "items": "Bass",
+        "note": "腹部ウェイト約5g。高足場・上層・その場での横向きターンを想定。"
+      },
+      {
+        "group": "OTHER",
+        "items": "TiNY KLASH レッドヘッド / Jointed Claw Magnum / Jointed Claw 168 / Dowz Swimmer 240SF / anolu F / Amazon Pencil / Big Bandit",
+        "note": "フィールドとベイトサイズに応じて使用。"
+      }
+    ],
+    "fieldGear": [
+      {
+        "item": "無印良品バックパック",
+        "status": "使用中",
+        "note": "左サイドは水と消耗品、右サイドはフィッシュグリップ。メジャーは外付けを検討。"
+      },
+      {
+        "item": "ランディングネット",
+        "status": "使用中",
+        "note": "2026年3月7日の荒川釣行でシャフト固着を確認。"
+      },
+      {
+        "item": "メジャーシート",
+        "status": "導入準備中",
+        "note": "黒のメッシュタイプを候補。丸めてバッグ外側へ固定する運用を検討。"
+      },
+      {
+        "item": "BogaGrip 15lb",
+        "status": "候補",
+        "note": "ランディング後の安全な保持と重量記録用。純正品の在庫確認が必要。"
+      }
+    ],
     "maintenance": [
       {
         "item": "PEにシュッ",
@@ -408,11 +474,10 @@
         "status": "実施済み"
       }
     ],
-    "notes": [
-      "リーダーは毎釣行交換するため、継続管理の対象外。",
+    "holds": [
       "エビスフィッシング期のAmbassadeur 6500はフレーム全体に歪みがあり、キャスト時ノイズの原因確認までK9使用を保留。",
-      "2026年3月7日の荒川釣行でタモシャフトが固着。",
-      "同日のRocketはヒートン周辺からの浸水を疑う白化現象があった。"
+      "2026年3月7日に使用したRocketは、ヒートン周辺からの浸水を疑う白化現象があった。",
+      "リーダーは毎釣行交換するため、メンテナンス回数の管理対象外。"
     ]
   },
   "logs": [

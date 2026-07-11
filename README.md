@@ -1,19 +1,15 @@
 # TROPHY FIELD LAB
 
-GitHub Pages用のスマホ向けフィールドログです。
+Personal field archive for Tokyo Bay big-bait fishing.
 
-## v0.3.0 の情報構造
+## v0.8.0
 
-- ホーム：今日の結論、次回試すこと、最近の釣行
-- フィールド：場所ごとのストラテジー、知見、釣行履歴
-- フィールドストラテジー：季節・潮回り・条件から過去ログを逆引き
-- 操作：ルアー操作の基準と課題
-- タックル：構成とメンテナンス
+- English labels in the full-screen menu
+- Hash-based page routing and last-page restore
+- Reloading or updating keeps the current section open
+- Rebuilt TACKLE page with current system, lure library, field gear, maintenance, and hold items
 
-日常的な記録追加は `data.json` の更新だけで反映できます。
+Upload every file in this directory to the repository root.
 
-## v0.6.8 更新動作
-
-- ホーム画面からアプリへ戻ると、最新の `data.json` を自動確認します。
-- 右上の UPDATE（↻）で手動確認できます。
-- UI更新時は `index.html` 内の CSS / JS バージョンも更新します。
+## v0.8.0
+ページ導入部の見出しを英語へ統一し、本文・各セクションは日本語で読むエディトリアル構成に更新しました。

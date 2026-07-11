@@ -1,3 +1,25 @@
+# Changelog
+
+## v0.8.0 — Editorial Typography
+- 各ページのファーストビュー見出しを `FIELD / FIELD STRATEGY / OPERATION / TACKLE / LOG` に統一
+- フィールド詳細でも最初に `FIELD` を表示し、その下のコンテンツとして日本語の場所名を配置
+- ページ導入部の余白とタイポグラフィを強化
+- ページ状態保持、更新ボタン、ログタイトルなど既存機能を維持
+
+# CHANGELOG
+
+## v0.7.0 — Information Architecture & UX
+
+### Added
+- URL hash routing for HOME / FIELD / FIELD STRATEGY / OPERATION / TACKLE / LOG.
+- Last-view restoration for iPhone home-screen launch and browser reload.
+- Structured tackle system, lure library, field gear, and hold/check information.
+
+### Changed
+- Full-screen menu labels changed to English.
+- Data refresh now preserves the current page and scroll position.
+- TACKLE page rebuilt around the actual current equipment and maintenance workflow.
+
 # CHANGELOG
 
 ## v0.6.8
