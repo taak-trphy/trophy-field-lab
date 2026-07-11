@@ -98,7 +98,7 @@
   .tackle-group>span{margin:0 0 3px}
 }
 
-/* v0.8.0 Editorial Typography */
+/* v0.8.2 Tackle hierarchy refinement */
 .view-intro{min-height:min(54vh,540px);display:flex;flex-direction:column;justify-content:flex-end}
 .view-intro h1{font-family:Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:-.07em}
 .view-intro>p:last-child{max-width:520px}
