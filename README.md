@@ -24,3 +24,8 @@ Upload every file in this directory to the repository root.
 ## Brand sign
 
 `TROPHY` / `on my way.`
+
+
+## v0.9.0
+
+`LIBRARY` を追加し、釣り動画、コンディショニング動画、公式リファレンスを「何を見るか」とセットで管理します。

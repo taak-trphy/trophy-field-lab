@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.9.0 — LIBRARY / Brand Alignment
+
+### Added
+- メニューとページに `LIBRARY` を追加。
+- `MEDIA` に、キャスト・モードB・フィールド判断を見るための釣り動画を登録。
+- `CONDITIONING` に、股関節内旋・肩甲骨・ゴムバンド運動の日本語動画を登録。
+- コンディショニング内に、医師からの制限事項と前提条件を追加。
+- `REFERENCE` にBORED CHIMERA公式情報と気象庁の東京潮位表を追加。
+- 各教材に THEME / FOCUS / FIELD NOTE を持たせ、見る目的と実践後の学びを分離。
+
+### Changed
+- ヘッダーの `TROPHY` と `FIELD LAB / on my way.` を上下中央で揃えるようブランドロックアップを調整。
+- バージョンを `0.9.0`、更新日を `2026.07.13` に更新。
+
 ## v0.8.9 — Brand Sign / Pattern Data
 
 ### Added

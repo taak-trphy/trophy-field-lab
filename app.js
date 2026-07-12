@@ -47,7 +47,28 @@ function logArchiveItem(l,index){
 }
 function logView(){const all=[...data.logs].sort((a,b)=>b.date.localeCompare(a.date));const months=['すべて',...new Set(all.map(logMonthKey))];const logs=activeLogMonth==='すべて'?all:all.filter(l=>logMonthKey(l)===activeLogMonth);return `${intro('06','LOG','釣りに行った日ごとに、条件・操作・結果・その日の結論を時系列で読み返す。')}<section class="section archive-filter"><div class="section-head"><span class="section-no">01</span><h2>日付から見る</h2><span class="section-count">${logs.length} LOG</span></div><div class="month-tabs">${months.map(m=>`<button class="month-tab ${activeLogMonth===m?'active':''}" data-log-month="${esc(m)}">${m==='すべて'?'すべて':m.replace('-',' / ')}</button>`).join('')}</div><div class="archive-list">${logs.map(logArchiveItem).join('')}</div></section>`}
 
-const views={home:homeView,field:fieldView,strategy:strategyView,operation:operationView,tackle:tackleView,log:logView};
+
+function libraryCard(item,type='media'){
+  const focus=Array.isArray(item.focus)?lineList(item.focus):`<p>${esc(item.focus||'')}</p>`;
+  return `<article class="library-card">
+    <div class="library-card-meta"><span>${esc(item.theme||type.toUpperCase())}</span><span>${esc(item.status||'REFERENCE')}</span></div>
+    <h3>${esc(item.title)}</h3>
+    <p class="library-source">${esc(item.source||'')}</p>
+    ${item.watch?`<div class="library-block"><span class="library-label">見るところ</span><p>${esc(item.watch)}</p></div>`:''}
+    <div class="library-block"><span class="library-label">FOCUS</span>${focus}</div>
+    <div class="library-actions"><a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">動画・資料を開く ↗</a></div>
+    <div class="library-note"><span class="library-label">FIELD NOTE</span><p>${esc(item.note||'視聴・実践後に、確認できた事実をここへ残す。')}</p></div>
+  </article>`
+}
+function libraryView(){
+  const lib=data.library||{media:[],conditioning:{items:[],doctorNotes:[]},references:[]};
+  return `${intro('07','LIBRARY',lib.intro||'見る目的と、実践後に得た事実を残す。')}
+    ${section('01','MEDIA',`<div class="library-list">${(lib.media||[]).map(i=>libraryCard(i,'media')).join('')}</div>`,'FISHING / LEARNING')}
+    ${section('02','CONDITIONING',`<div class="conditioning-purpose"><span class="library-label">PURPOSE</span><p>${esc(lib.conditioning?.purpose||'')}</p></div><div class="doctor-note"><span class="library-label">医師からの前提</span>${lineList(lib.conditioning?.doctorNotes||[])}</div><div class="library-list">${(lib.conditioning?.items||[]).map(i=>libraryCard(i,'conditioning')).join('')}</div>`,'BODY / RECOVERY')}
+    ${section('03','REFERENCE',`<div class="reference-list">${(lib.references||[]).map(i=>`<a class="reference-row" href="${esc(i.url)}" target="_blank" rel="noopener noreferrer"><span>${esc(i.theme)}</span><div><strong>${esc(i.title)}</strong><p>${esc(i.source)} / ${esc(i.focus)}</p></div><i>↗</i></a>`).join('')}</div>`,'OFFICIAL SOURCES')}`
+}
+
+const views={home:homeView,field:fieldView,strategy:strategyView,operation:operationView,tackle:tackleView,log:logView,library:libraryView};
 const validViews=new Set(Object.keys(views));
 function routeString(view=currentView,fieldId=selectedFieldId){return view==='field'&&fieldId?`#field/${encodeURIComponent(fieldId)}`:`#${view}`}
 function readRoute(){
@@ -108,6 +129,6 @@ async function loadData({initial=false}={}){
     if(initial)app.innerHTML=`<div class="error"><strong>データを読み込めませんでした。</strong><p>${esc(err.message)}</p></div>`;
   }
 }
-const currentBuild='0.8.9';
+const currentBuild='0.9.0';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});

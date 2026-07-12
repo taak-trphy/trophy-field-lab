@@ -1,8 +1,8 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "0.8.9",
-    "updated": "2026.07.12",
+    "version": "0.9.0",
+    "updated": "2026.07.13",
     "sessionCount": 11,
     "rules": [
       "記録するのは感想ではなく、再現できる事実。",
@@ -895,5 +895,117 @@
       ],
       "title": "六郷の地獄"
     }
-  ]
+  ],
+  "library": {
+    "intro": "動画や記事を保存するのではなく、何を見るか、何を確かめるか、実践後に何が分かったかを残す。",
+    "media": [
+      {
+        "title": "奥田学｜アーマジョイント×ビッグフィッシュ 中海シーバス編",
+        "source": "ルアーマガジン / 奥田学",
+        "theme": "CASTING / FIELD",
+        "focus": [
+          "投げる直前のロッドへの荷重",
+          "ルアーの飛行姿勢",
+          "立ち位置と通すコース"
+        ],
+        "watch": "投げる前から着水までを中心に見る",
+        "url": "https://www.youtube.com/watch?v=vq-cEed85ZI",
+        "status": "視聴候補",
+        "note": ""
+      },
+      {
+        "title": "ビッグベイト3サイズ キャスト比較｜BRIST HYDRO8.5XXH",
+        "source": "Fishman",
+        "theme": "CASTING",
+        "focus": [
+          "ルアー重量ごとのロッドの曲がり",
+          "バットへ荷重が乗るタイミング",
+          "リリース後の飛行姿勢"
+        ],
+        "watch": "サイズを替えた時のフォーム差を見る",
+        "url": "https://www.youtube.com/watch?v=gG2PpEzJwhw",
+        "status": "視聴候補",
+        "note": ""
+      },
+      {
+        "title": "東京ビッグベイトシーバス｜KLASH9 mode-B",
+        "source": "TSURI NEET / 釣りにーと。",
+        "theme": "MODE B / RETRIEVE",
+        "focus": [
+          "モードBの入力方向",
+          "ラインスラックの残し方",
+          "追わせる距離と速度変化"
+        ],
+        "watch": "アクション開始前から回収直前までを見る",
+        "url": "https://www.youtube.com/watch?v=LCCg17PcvnU",
+        "status": "視聴候補",
+        "note": ""
+      }
+    ],
+    "conditioning": {
+      "purpose": "ビッグベイトを投げ続けても肩・肘・股関節を壊しにくい身体を作る。筋肥大より、動作の安定と回復を優先する。",
+      "doctorNotes": [
+        "深いスクワットや股関節へ強い負担を掛ける運動は避ける。",
+        "寝た姿勢で、外を向いたつま先を内側へ動かす股関節内旋の運動を継続する。",
+        "医師から教わった動きと異なる動画は、そのまま実施せず確認材料として見る。"
+      ],
+      "items": [
+        {
+          "title": "股関節内旋エクササイズ",
+          "source": "YAMAMOTOのピラティスチャンネル / 理学療法士",
+          "theme": "HIP / 内旋",
+          "focus": [
+            "骨盤を大きく動かさず脚を内側へ動かす",
+            "股関節前側に詰まりや痛みが出ない範囲",
+            "医師に教わった動作との一致"
+          ],
+          "url": "https://www.youtube.com/watch?v=E45fE5oJwTQ",
+          "status": "医師推奨動作の確認用",
+          "note": ""
+        },
+        {
+          "title": "座ったままできるゴムバンド運動 上肢編",
+          "source": "さくら総合病院 / 理学療法士監修",
+          "theme": "SHOULDER / BACK",
+          "focus": [
+            "肩をすくめずに動かす",
+            "軽い抵抗で肩甲骨を動かす",
+            "肩や肘に痛みが出ない範囲"
+          ],
+          "url": "https://www.youtube.com/watch?v=4DWxTUi9OPE",
+          "status": "フォーム確認用",
+          "note": ""
+        },
+        {
+          "title": "タイプ別 肩甲骨トレーニング",
+          "source": "慶友整形外科クリニック / 理学療法士",
+          "theme": "SCAPULA",
+          "focus": [
+            "肩甲骨の動き",
+            "腕だけで引かない",
+            "キャスト後に肩前面へ痛みが残らないか"
+          ],
+          "url": "https://www.youtube.com/watch?v=S1j5C4kvHA4",
+          "status": "視聴候補",
+          "note": ""
+        }
+      ]
+    },
+    "references": [
+      {
+        "title": "BORED CHIMERA 製品情報",
+        "source": "BORED公式",
+        "theme": "MAINTENANCE",
+        "focus": "ワンウェイクラッチへの使用目的、塗布量、防錆と滑りのバランスを確認する。",
+        "url": "https://bored.thebase.in/items/32904184"
+      },
+      {
+        "title": "東京の潮位表",
+        "source": "気象庁",
+        "theme": "TIDE",
+        "focus": "釣行日の満潮・干潮と、現場で確認した流れ・水深の変化を照合する。",
+        "url": "https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?stn=TK"
+      }
+    ]
+  }
 }
