@@ -19,3 +19,8 @@ Upload every file in this directory to the repository root.
 
 ## v0.8.5
 手持ちルアーをKLASH系と役割別カテゴリに整理し、OTHERを廃止しました。
+
+
+## Brand sign
+
+`TROPHY` / `on my way.`

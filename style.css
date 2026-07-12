@@ -308,3 +308,8 @@
   .archive-entry h3{font-size:clamp(25px,8vw,34px)}
   .archive-conclusion{font-size:13px;line-height:1.8}
 }
+
+/* v0.8.9 brand + structured log patterns */
+.brand-stack{display:inline-flex;flex-direction:column;gap:2px;line-height:1}.brand-tagline{font-size:9px;font-weight:400;letter-spacing:.02em;color:var(--muted);text-transform:none}.footer-brand{display:inline-flex;align-items:baseline;gap:8px}.footer-brand b{font-size:10px;letter-spacing:.16em}.footer-brand i{font-size:10px;font-weight:400;color:var(--muted)}
+.pattern-list{margin-top:24px;border-top:1px solid var(--ink)}.pattern-item{padding:18px 0;border-bottom:1px solid var(--line)}.pattern-head{display:flex;justify-content:space-between;gap:18px;align-items:baseline;margin-bottom:14px}.pattern-head span{font-size:9px;letter-spacing:.16em;color:var(--muted)}.pattern-head strong{font-size:15px;line-height:1.45;text-align:right}.pattern-item dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}.pattern-item dl>div{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--soft)}.pattern-item dt{font-size:9px;letter-spacing:.08em;color:var(--muted)}.pattern-item dd{margin:0;font-size:12px;line-height:1.65}.pattern-item .pattern-reaction{grid-column:1/-1}.pattern-item .pattern-reaction dd{font-weight:650}
+@media(max-width:640px){.brand-stack{gap:1px}.brand-tagline{font-size:8px}.pattern-head{display:block}.pattern-head strong{display:block;margin-top:6px;text-align:left}.pattern-item dl{grid-template-columns:1fr}.pattern-item .pattern-reaction{grid-column:auto}.pattern-item dl>div{grid-template-columns:64px minmax(0,1fr)}.site-footer{align-items:flex-start}.footer-brand{flex-direction:column;gap:3px}}
