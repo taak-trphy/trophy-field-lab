@@ -91,6 +91,6 @@ async function loadData({initial=false,notify=false}={}){
 refreshButton.addEventListener('click',()=>loadData({notify:true}));
 window.addEventListener('pageshow',()=>{if(data)loadData()});
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&data)loadData()});
-const currentBuild='0.8.3';
+const currentBuild='0.8.4';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});
