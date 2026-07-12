@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "0.8.6",
+    "version": "0.8.8",
     "updated": "2026.07.12",
     "sessionCount": 11,
     "rules": [
@@ -279,12 +279,13 @@
       ]
     },
     {
-      "name": "第一京浜×山手通り付近の河川",
+      "name": "目黒川河口",
       "observations": 0,
       "tags": [
         "調査候補",
         "駐車場確認",
-        "都市河川"
+        "都市河川",
+        "第一京浜×山手通り付近"
       ],
       "strong": "未調査。",
       "target": "橋・護岸・流れ・足場・駐車環境を現地確認する。",
@@ -297,7 +298,7 @@
         "K9を安全に振れる立ち位置と水深。"
       ],
       "id": "shinagawa-river-check",
-      "summary": "第一京浜と山手通りの交差点近く。今後現地確認する候補地。",
+      "summary": "第一京浜×山手通り付近。潮位、流れ、足場、駐車環境を今後現地確認する候補地。",
       "seasonStrategy": [
         {
           "label": "初回調査",
@@ -413,7 +414,7 @@
     ]
   },
   "tackle": {
-    "main": "TULALA MonstoroG 75HC / Ambassadeur 5501CS Rocket 5.3:1 / VARIVAS PE Max Power X8 6号 100m / ナイロン60lb 約100cm",
+    "main": "TULALA MonstoroG 75HC / Ambassadeur 5501CS Rocket 5.3:1 / VARIVAS PE Max Power X8 6号 100m / オーシャンレコードショックリーダー 60LB 約100cm",
     "system": [
       {
         "label": "ROD",
@@ -432,8 +433,8 @@
       },
       {
         "label": "LEADER",
-        "name": "ナイロン 60lb",
-        "note": "最終約100cm。毎釣行交換するため継続管理の対象外。"
+        "name": "オーシャンレコードショックリーダー 60LB",
+        "note": "約100cm。毎釣行交換し、傷・ザラつき・結束部を確認。"
       },
       {
         "label": "CONNECTION",
