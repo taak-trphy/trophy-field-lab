@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "updated": "2026.07.12",
     "sessionCount": 11,
     "rules": [
@@ -439,19 +439,39 @@
     ],
     "lures": [
       {
-        "group": "K9 LOW",
+        "group": "KLASH 9 LOW",
         "items": "SIREN / レッドヘッド / マジックトラウト / 256 / Bella（予備）",
-        "note": "リップスロットはエポキシ防水。前後フック1/0。腹部ウェイト2.5〜3g。"
+        "note": "リップ・テール・モードで役割を変える主軸。リップスロットはエポキシ防水、前後フック1/0、腹部ウェイト2.5〜3g。"
       },
       {
-        "group": "K9 HI",
+        "group": "KLASH 9 HI",
         "items": "Bass",
-        "note": "腹部ウェイト約5g。高足場・上層・その場での横向きターンを想定。"
+        "note": "腹部ウェイト約5g。高足場・上層・表層首振り・その場での横向きターンを担う。"
       },
       {
-        "group": "OTHER",
-        "items": "TiNY KLASH レッドヘッド / Jointed Claw Magnum / Jointed Claw 168 / Dowz Swimmer 240SF / anolu F / Amazon Pencil / Big Bandit",
-        "note": "フィールドとベイトサイズに応じて使用。"
+        "group": "TiNY KLASH LOW",
+        "items": "レッドヘッド",
+        "note": "Lowのみ所持。K9と同様にリップ・テール・モードで役割を組み替える。"
+      },
+      {
+        "group": "GLIDE BAIT",
+        "items": "Jointed Claw 168 / Jointed Claw Magnum / Dowz Swimmer 240SF",
+        "note": "S字と横方向のスライドで、広い範囲から魚の位置と反応を探る。"
+      },
+      {
+        "group": "CRANK BAIT",
+        "items": "anolu F",
+        "note": "一定の水噛みを保ちながら、クランキングでレンジとコースを通す。"
+      },
+      {
+        "group": "PENCIL BAIT",
+        "items": "Amazon Pencil",
+        "note": "水面をドッグウォークで探り、表層の反応を確認する。"
+      },
+      {
+        "group": "WAKE / SURFACE BAIT",
+        "items": "Big Bandit",
+        "note": "表層から表層直下を強く動かし、魚に気付かせる役割。"
       }
     ],
     "fieldGear": [

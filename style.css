@@ -113,3 +113,5 @@
   .field-identity h2,.field-identity>p:last-child{grid-column:1}
   .field-identity h2{font-size:clamp(30px,10vw,48px)}
 }
+
+/* v0.8.3 Lure system categories */

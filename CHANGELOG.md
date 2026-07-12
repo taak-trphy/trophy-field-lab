@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.8.3 — Lure system categories
+- OTHERを廃止し、手持ちルアーを役割別に再分類
+- KLASH 9 Low / Hi と TiNY KLASH Lowを個別に整理
+- TiNY KLASHはLowレッドヘッドのみ所持として反映
+- GLIDE BAIT / CRANK BAIT / PENCIL BAIT / WAKE・SURFACE BAITを追加
+- anolu FをCRANK BAITへ分類
+- ルアー欄の補助見出しをLURE SYSTEMへ変更
+
 ## v0.8.2 — Tackle hierarchy refinement
 - TACKLEの「現在のシステム」直下にあった重複サマリーを削除
 - ROD / REEL / MAIN LINE / LEADER / LURE の個別情報から直接読み始められる構成に整理
