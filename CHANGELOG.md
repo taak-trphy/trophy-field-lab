@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v1.0.0 — Data First / Release
+
+### Added
+- OPERATIONに原理レイヤーを追加。CASTING / LONG SLIDE / BUOYANCYを分離。
+- 2026.07.12ログへ浮力調整を実データとして反映。
+- PATTERN表示へ「浮力調整」を追加。
+- TACKLEへ判断基準とPEライフサイクルを追加。
+- LOG詳細へ「確認できたこと / 仮説 / 次回試すこと」を追加。
+- 不足していたブランドアイコンを追加。
+
+### Changed
+- バージョンを1.0.0へ更新。
+- `data.json` を表示の唯一の情報源として整理。
+- SIREN約1.5〜2g調整あり / 256調整なしの比較を、HOME・OPERATION・LOGへ同期。
+- PWA前提を外し、通常ブラウザ表示を基本に変更。
+
+### Fixed
+- v0.9.1でCHANGELOGだけが更新され、サイト表示に反映されなかった問題を修正。
+- ヘッダーのTROPHYとon my way.の上下位置を調整。
+
+---
+
+# CHANGELOG
+
 ## v0.9.0 — LIBRARY / Brand Alignment
 
 ### Added

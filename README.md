@@ -1,31 +1,16 @@
 # TROPHY FIELD LAB
 
-Personal field archive for Tokyo Bay big-bait fishing.
+TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## v0.8.6
+## Version 1.0.0
 
-- English labels in the full-screen menu
-- Hash-based page routing and last-page restore
-- Reloading or updating keeps the current section open
-- Rebuilt TACKLE page with role-based lure system, field gear, maintenance, and hold items
+- `data.json` を唯一の記録データとして使用
+- FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示
+- LOGはPATTERN単位でルアー、カラー、テール、モード、リップ、浮力調整、操作、結果を記録
+- PC / スマートフォン共通のリキッド・ワンカラム設計
+- GitHub Pagesでは全ファイルをリポジトリのルートへアップロード
 
-Upload every file in this directory to the repository root.
+## ブランド
 
-## v0.8.2
-ページ導入部の見出しを英語へ統一し、本文・各セクションは日本語で読むエディトリアル構成に更新しました。
-
-## v0.8.6
-メンテナンス情報を施工後2釣行へ更新し、ワンウェイローラークラッチのCHIMERA極薄塗布方針を追加しました。
-
-## v0.8.5
-手持ちルアーをKLASH系と役割別カテゴリに整理し、OTHERを廃止しました。
-
-
-## Brand sign
-
-`TROPHY` / `on my way.`
-
-
-## v0.9.0
-
-`LIBRARY` を追加し、釣り動画、コンディショニング動画、公式リファレンスを「何を見るか」とセットで管理します。
+**TROPHY**  
+*on my way.*
