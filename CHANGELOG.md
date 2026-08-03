@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v1.1 — 2026-08-03
+
+### Added
+- 2026年8月2日「相模湖 Day1」のFIELD LOGと5つのルアー反応パターンを追加
+- FIELD DATABASEに相模湖（本湖／秋山川／桂川）を追加
+- 5501CS RocketのSummer Maintenance v1.0を追加
+- MAX POWER PE6のLINE LOGを追加
+- 相模湖Day1から得たLESSONを追加
+
+### Changed
+- HOMEの今日の結論、次回試すこと、発見を相模湖Day1の内容へ更新
+- READMEのWhat's Newを2026年8月版へ更新
+- キャッシュバージョンを1.1へ更新
+
 ## v1.0.1 — 2026-07-14
 
 ### Added
