@@ -17,22 +17,38 @@ function filteredLogs(){return [...data.logs].filter(l=>(activeFilters.season===
 function strategyView(){const seasons=['すべて',...new Set(data.logs.map(l=>l.season).filter(Boolean))];const tides=['すべて',...new Set(data.logs.map(l=>l.tide).filter(Boolean))];const conditions=['すべて',...new Set(data.logs.flatMap(l=>l.conditions||[]))];const logs=filteredLogs();return `${intro('03','STRATEGY','条件を入口にして、過去の実釣ログと基本方針へ戻る。')}${strategyTable('基本方針',data.strategy.quick)}${strategyTable('潮回り別',data.strategy.tide)}${strategyTable('シーズン別',data.strategy.season)}<section class="section"><div class="section-head"><span class="section-no">04</span><h2>条件から過去ログを見る</h2><span class="section-count">${logs.length} LOG</span></div><div class="filter-block"><h3>季節</h3>${filterButtons('season',seasons)}</div><div class="filter-block"><h3>潮回り</h3>${filterButtons('tide',tides)}</div><div class="filter-block"><h3>条件</h3>${filterButtons('condition',conditions)}</div><div class="log-list">${logs.length?logs.map(logRow).join(''):'<p>該当ログはありません。</p>'}</div></section>`}
 function operationView(){const principles=data.operation.principles||[];return `${intro('04','OPERATION','操作を、原理・確認済みの知見・次の検証に分けて記録する。')}${section('01','原理',`<div class="principle-list">${principles.map(p=>`<article class="principle-item"><span>${esc(p.name)}</span><strong>${esc(p.statement)}</strong></article>`).join('')}</div>`,'PRINCIPLES')}${section('02','現在の基準セット',`<p class="lead-copy">${esc(data.operation.currentSetup)}</p>`)}<section class="section"><div class="section-head"><span class="section-no">03</span><h2>操作項目</h2><span class="section-count">${data.operation.skills.length} ITEMS</span></div><div class="entry-list">${data.operation.skills.map(s=>`<div class="entry"><strong>${esc(s.name)}</strong><p>${esc(s.note)}</p><span class="status">${esc(s.state)}</span></div>`).join('')}</div></section>`}
 function maintenanceView(){
+  const state=data.tackle.maintenanceState||{parts:[],line:{}};
   const records=data.tackle.maintenance||[];
-  const latest=records[0];
-  const past=records.slice(1);
-  if(!latest)return '<p>メンテナンス記録はありません。</p>';
-  const parts=(latest.parts||[]).map(p=>`<div class="maintenance-part"><dt>${esc(p.name)}</dt><dd>${esc(p.work)}</dd></div>`).join('');
-  const history=past.map(m=>`<div class="maintenance-history-row"><time>${esc(m.date)}</time><strong>${esc(m.item)}</strong><p>${esc(m.status)}</p></div>`).join('');
+  const tripText=n=>n==null?'—':`施工後 ${n}釣行`;
+  const partRows=(state.parts||[]).map(p=>`<div class="maintenance-state-row">
+    <strong class="maintenance-state-item">${esc(p.item)}</strong>
+    <time class="maintenance-state-date">${esc(p.lastServiceDate)}</time>
+    <span class="maintenance-state-chemical">${esc(p.chemical)}</span>
+    <b class="maintenance-state-trips">${esc(tripText(p.tripsSince))}</b>
+    <p class="maintenance-state-note">${esc(p.note||'')}</p>
+  </div>`).join('');
+  const line=state.line||{};
+  const history=records.map(m=>`<div class="maintenance-history-row"><time>${esc(m.date)}</time><strong>${esc(m.item)}</strong><p>${esc(m.summary||m.status)}</p></div>`).join('');
   return `<div class="maintenance-stack">
-    <article class="maintenance-latest">
-      <header class="maintenance-latest-head">
-        <div><span>LATEST MAINTENANCE</span><h3>${esc(latest.item)}</h3></div>
-        <time>${esc(latest.date)}</time>
-      </header>
-      <dl class="maintenance-parts">${parts}</dl>
-      <p class="maintenance-note">${esc(latest.note||'')}</p>
-    </article>
-    ${past.length?`<details class="maintenance-history"><summary><span>PAST MAINTENANCE</span><b>${past.length} RECORDS</b></summary><div class="maintenance-history-list">${history}</div></details>`:''}
+    <section class="maintenance-current">
+      <header class="maintenance-state-title"><span>CURRENT MAINTENANCE</span><h3>${esc(state.target||'')}</h3></header>
+      <div class="maintenance-state-table">
+        <div class="maintenance-state-head"><span>PART</span><span>LAST SERVICE</span><span>CHEMICAL</span><span>TRIPS SINCE</span><span>NOTE</span></div>
+        ${partRows}
+      </div>
+    </section>
+    <section class="line-maintenance">
+      <header class="maintenance-subhead"><span>LINE MAINTENANCE</span><h3>${esc(line.targetLine||'')}</h3></header>
+      <dl class="line-maintenance-grid">
+        <div><dt>PE COATING</dt><dd>${esc(line.item||'—')}</dd></div>
+        <div><dt>LAST SERVICE</dt><dd>${esc(line.lastPECoating||'—')}</dd></div>
+        <div><dt>TRIPS SINCE</dt><dd>${esc(tripText(line.lineTripsSince))}</dd></div>
+        <div><dt>EST. REMAINING</dt><dd>${esc(line.estimatedRemaining||'—')}</dd></div>
+        <div class="line-maintenance-wide"><dt>REVERSE WINDING</dt><dd>${esc(line.reverseWindingStatus||'—')}</dd></div>
+      </dl>
+      ${line.lineNote?`<p class="maintenance-state-footnote">${esc(line.lineNote)}</p>`:''}
+    </section>
+    ${records.length?`<details class="maintenance-history"><summary><span>PAST MAINTENANCE</span><b>${records.length} RECORDS</b></summary><div class="maintenance-history-list">${history}</div></details>`:''}
   </div>`
 }
 function tackleView(){const lc=data.tackle.lineLifecycle||{};const lineLogs=(lc.logs||[]).map(l=>`<div class="entry"><strong>${esc(l.title)}</strong><p>${esc(l.date)}</p><p>${esc(l.note)}</p><span class="status">LINE LOG</span></div>`).join('');return `${intro('05','TACKLE','所有物ではなく、役割・信頼性・ライフサイクルで整理する。')}${section('01','判断基準',lineList(data.tackle.philosophy||[]),'PHILOSOPHY')}${section('02','現在のシステム',`<div class="spec-grid">${data.tackle.system.map(i=>`<div class="spec-item"><span>${esc(i.label)}</span><strong>${esc(i.name)}</strong><p>${esc(i.note)}</p></div>`).join('')}</div>`,'CURRENT SYSTEM')}${section('03','ルアー構成',`<div class="tackle-groups">${data.tackle.lures.map(g=>`<div class="tackle-group"><span>${esc(g.group)}</span><strong>${esc(g.items)}</strong><p>${esc(g.note)}</p></div>`).join('')}</div>`,'LURE SYSTEM')}${section('04','ライン・ライフサイクル',`<p class="lead-copy">${esc(lc.current||'')}</p>${lineList(lc.rules||[])}${lineLogs?`<div class="entry-list">${lineLogs}</div>`:''}${(lc.nextCandidates||[]).length?`<div class="candidate-line"><span>NEXT CANDIDATES</span><strong>${esc(lc.nextCandidates.join(' / '))}</strong></div>`:''}`,'RELIABILITY / LINE LOG')}${section('05','フィールドギア',`<div class="entry-list">${data.tackle.fieldGear.map(g=>`<div class="entry"><strong>${esc(g.item)}</strong><p>${esc(g.note)}</p><span class="status">${esc(g.status)}</span></div>`).join('')}</div>`,'CARRY SYSTEM')}<section class="section"><div class="section-head"><span class="section-no">06</span><h2>メンテナンス</h2><span class="section-count">MAINTENANCE</span></div>${maintenanceView()}</section>${section('07','使用保留・確認事項',lineList(data.tackle.holds),'HOLD / CHECK')}`}
@@ -151,6 +167,6 @@ async function loadData({initial=false}={}){
     if(initial)app.innerHTML=`<div class="error"><strong>データを読み込めませんでした。</strong><p>${esc(err.message)}</p></div>`;
   }
 }
-const currentBuild='1.1.2';
+const currentBuild='1.2.0';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});
