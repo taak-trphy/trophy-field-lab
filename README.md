@@ -2,7 +2,7 @@
 
 TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## Version 1.1.2
+## Version 1.2.0
 
 - `data.json` を唯一の記録データとして使用
 - FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示

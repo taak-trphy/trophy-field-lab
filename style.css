@@ -409,3 +409,45 @@
   .maintenance-history-row{grid-template-columns:86px minmax(0,1fr);gap:5px 12px}
   .maintenance-history-row p{grid-column:2}
 }
+
+/* v1.2.0 — maintenance state management */
+.maintenance-current{padding:28px 0 30px;border-bottom:1px solid var(--ink)}
+.maintenance-state-title,.maintenance-subhead{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:20px}
+.maintenance-state-title span,.maintenance-subhead span{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--muted)}
+.maintenance-state-title h3,.maintenance-subhead h3{margin:0;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.maintenance-state-table{border-top:1px solid var(--ink)}
+.maintenance-state-head,.maintenance-state-row{display:grid;grid-template-columns:180px 130px 210px 130px minmax(0,1fr);gap:18px;align-items:start}
+.maintenance-state-head{padding:10px 0;border-bottom:1px solid var(--ink)}
+.maintenance-state-head span{font-size:8px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.maintenance-state-row{padding:13px 0;border-bottom:1px solid var(--line)}
+.maintenance-state-row:last-child{border-bottom:0}
+.maintenance-state-item{font-size:12px}
+.maintenance-state-date,.maintenance-state-chemical,.maintenance-state-note{font-size:11px;line-height:1.55}
+.maintenance-state-date,.maintenance-state-note{color:var(--muted)}
+.maintenance-state-trips{font-size:10px;font-weight:700;letter-spacing:.03em}
+.maintenance-state-note{margin:0}
+.line-maintenance{padding:30px 0;border-bottom:1px solid var(--ink)}
+.line-maintenance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;border-top:1px solid var(--ink)}
+.line-maintenance-grid>div{min-width:0;padding:14px 18px 14px 0;border-bottom:1px solid var(--line)}
+.line-maintenance-grid dt{margin-bottom:7px;color:var(--muted);font-size:8px;font-weight:700;letter-spacing:.12em}
+.line-maintenance-grid dd{margin:0;font-size:12px;font-weight:600;line-height:1.55}
+.line-maintenance-wide{grid-column:span 2}
+.maintenance-state-footnote{max-width:760px;margin:18px 0 0;color:var(--muted);font-size:11px;line-height:1.7}
+@media(max-width:900px){
+  .maintenance-state-head,.maintenance-state-row{grid-template-columns:160px 110px 180px 110px minmax(0,1fr);gap:12px}
+}
+@media(max-width:700px){
+  .maintenance-current,.line-maintenance{padding:22px 0}
+  .maintenance-state-title,.maintenance-subhead{align-items:start;margin-bottom:16px}
+  .maintenance-state-title h3,.maintenance-subhead h3{font-size:17px;text-align:right}
+  .maintenance-state-head{display:none}
+  .maintenance-state-row{grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;padding:12px 0}
+  .maintenance-state-item{grid-column:1;grid-row:1}
+  .maintenance-state-trips{grid-column:2;grid-row:1;text-align:right}
+  .maintenance-state-date,.maintenance-state-chemical,.maintenance-state-note{grid-column:1/-1}
+  .maintenance-state-date::before{content:'LAST SERVICE / ';font-size:8px;font-weight:700;letter-spacing:.08em}
+  .maintenance-state-chemical::before{content:'CHEMICAL / ';font-size:8px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
+  .line-maintenance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .line-maintenance-grid>div{padding:12px 10px 12px 0}
+  .line-maintenance-wide{grid-column:1/-1}
+}

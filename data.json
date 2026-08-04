@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "updated": "2026.08.04",
     "sessionCount": 13,
     "rules": [
@@ -603,6 +603,7 @@
             "work": "洗浄／CHIMERA：BSLU＝約2：1"
           }
         ],
+        "summary": "ウォームシャフト／コグホイール／スプールベアリングを洗浄・再潤滑",
         "note": "夏季の高温環境と長時間使用を想定した、耐久性・静粛性重視のセッティング。"
       },
       {
@@ -646,6 +647,48 @@
         "note": "毛羽立ち、潰れ、白化、局所的な硬化がないか先端側を中心に確認する。"
       }
     ],
+    "maintenanceState": {
+      "target": "5501CS Rocket",
+      "parts": [
+        {
+          "item": "ウォームシャフト",
+          "lastServiceDate": "2026.08.03",
+          "chemical": "THETA＋UGSIGMA",
+          "tripsSince": 0,
+          "note": "Summer Setting v1.0"
+        },
+        {
+          "item": "コグホイール",
+          "lastServiceDate": "2026.08.03",
+          "chemical": "THETA＋UGSIGMA",
+          "tripsSince": 0,
+          "note": ""
+        },
+        {
+          "item": "スプールベアリング",
+          "lastServiceDate": "2026.08.03",
+          "chemical": "CHIMERA：BSLU＝約2：1",
+          "tripsSince": 0,
+          "note": "耐久性・静粛性重視"
+        },
+        {
+          "item": "ワンウェイクラッチ",
+          "lastServiceDate": "記録なし",
+          "chemical": "BORED CHIMERA（極薄塗布）",
+          "tripsSince": null,
+          "note": "滑り・逆転・錆・水没・結露がある場合に即点検"
+        }
+      ],
+      "line": {
+        "item": "PEにシュッ",
+        "lastPECoating": "2026.07.10",
+        "lineTripsSince": 2,
+        "targetLine": "MAX POWER PE6",
+        "estimatedRemaining": "65〜70m",
+        "reverseWindingStatus": "見送り（ライン状態良好）",
+        "lineNote": "状態を観察し、最適な裏巻きタイミングを継続検証する。"
+      }
+    },
     "holds": [
       "エビスフィッシング期のAmbassadeur 6500はフレーム全体に歪みがあり、キャスト時ノイズの原因確認までK9使用を保留。",
       "リーダーは毎釣行交換するため、メンテナンス回数の管理対象外。"
