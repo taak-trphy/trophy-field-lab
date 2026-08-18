@@ -2,7 +2,7 @@
 
 TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## Version 1.2.1
+## Version 1.2.2
 
 - `data.json` を唯一の記録データとして使用
 - FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示
@@ -14,6 +14,9 @@ TROPHYによる、東京湾奥ビッグベイトの個人フィールドアー�
 
 ### 2026.08
 
+- 2026.08.18 勝島運河・鮫洲橋ログ
+- Mode B Long Slide + End Micro Pause検証項目
+- 浮力調整比較とメンテナンスカウンター更新
 - 相模湖 Day1
 - K9反応パターン取得
 - Summer Maintenance v1.0
