@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "updated": "2026.08.19",
     "sessionCount": 14,
     "rules": [
@@ -608,6 +608,24 @@
     ],
     "maintenance": [
       {
+        "item": "PEにシュッ／MAX POWER PE6",
+        "date": "2026.08.19",
+        "tripsSince": 0,
+        "status": "再施工完了",
+        "counter": "施工後0釣行",
+        "summary": "MAX POWER PE6へPEにシュッを再施工",
+        "note": "前回施工日は2026.07.10。2026.07.12、2026.07.14、2026.08.02、2026.08.18の4釣行後に再施工。"
+      },
+      {
+        "item": "ワンウェイローラークラッチ",
+        "date": "2026.08.19",
+        "tripsSince": 0,
+        "status": "メンテナンス実施",
+        "counter": "メンテナンス後0釣行",
+        "summary": "ワンウェイローラークラッチのメンテナンスを実施",
+        "note": "使用ケミカルは記録なし。"
+      },
+      {
         "item": "5501CS Rocket",
         "date": "2026.08.03",
         "tripsSince": 1,
@@ -697,20 +715,20 @@
         },
         {
           "item": "ワンウェイクラッチ",
-          "lastServiceDate": "記録なし",
-          "chemical": "BORED CHIMERA（極薄塗布）",
-          "tripsSince": null,
-          "note": "滑り・逆転・錆・水没・結露がある場合に即点検"
+          "lastServiceDate": "2026.08.19",
+          "chemical": "記録なし",
+          "tripsSince": 0,
+          "note": "ワンウェイローラークラッチのメンテナンスを実施"
         }
       ],
       "line": {
         "item": "PEにシュッ",
-        "lastPECoating": "2026.07.10",
-        "lineTripsSince": 4,
+        "lastPECoating": "2026.08.19",
+        "lineTripsSince": 0,
         "targetLine": "MAX POWER PE6",
         "estimatedRemaining": "65〜70m",
         "reverseWindingStatus": "見送り（ライン状態良好）",
-        "lineNote": "再施工に適したタイミングだが、現時点では未施工。状態を観察し、最適な裏巻きタイミングを継続検証する。再施工完了の報告があるまで日付とカウンターをリセットしない。"
+        "lineNote": "前回施工日は2026.07.10。4釣行後の2026.08.19に再施工。状態を観察し、最適な裏巻きタイミングを継続検証する。"
       }
     },
     "holds": [
@@ -725,6 +743,11 @@
     "lineLifecycle": {
       "current": "MAX POWER PE6。下巻きまでラインを放出。約112ハンドル回転。推定残量65〜70m。裏巻き可能タイミングではあるが、今回はライン状態良好のため裏巻きは見送り。今後も状態を観察し、最適タイミングを継続検証する。",
       "logs": [
+        {
+          "date": "2026-08-19",
+          "title": "MAX POWER PE6 PEにシュッ再施工",
+          "note": "前回施工日の2026.07.10から4釣行後に再施工。施工後0釣行。"
+        },
         {
           "date": "2026-08-03",
           "title": "MAX POWER PE6 残量確認",
