@@ -2,7 +2,7 @@
 
 TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## Version 1.2.4
+## Version 1.2.5
 
 - `data.json` を唯一の記録データとして使用
 - FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示
@@ -14,6 +14,13 @@ TROPHYによる、東京湾奥ビッグベイトの個人フィールドアー�
 
 ### 2026.08
 
+- 2026.08.23 相模湖 Day2ログ
+- 相模湖の小型バスと40アップの場所差検証
+- TiNY KLASHデッドウォーク／CRAMP Tail検証項目
+- K9緑鮒、TiNY KLASH 256、CRAMP TailのTACKLE登録
+- K9 Magic TroutのLOST記録
+- TiNY KLASHリアフックをSP #1へ更新
+- 2026.08.24 MAX POWER PE6新品交換／PEにシュッ施工
 - 2026.08.20 芝浦ログ
 - ライン干渉とベイト外縁の検証項目
 - 芝浦・表層ベイトのレンジ切り分け
