@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## v1.2.5 — 2026-08-24
+
+### Added
+- 2026年8月23日「相模湖 Day2」のFIELD LOGを追加
+- 相模湖FIELD KNOWLEDGEへDay2の既知情報と未解明項目を追加
+- OPERATIONへ大型個体の場所条件、TiNYデッドウォーク、CRAMP Tailの検証項目を追加
+- TACKLEへK9緑鮒、TiNY KLASH 256、DRT TINY KLASH CRAMP Tail #Whip Whiteを追加
+- TiNY KLASHのリアフックをSP #1へ変更した確認済み知見を追加
+- 2026年8月24日のMAX POWER PE6新品交換とPEにシュッ施工を履歴へ追加
+
+### Changed
+- HOMEの結論・根拠・NEXT ACTIONSを相模湖Day2へ更新
+- 相模湖の観測回数を2回、sessionCountを16へ更新
+- K9 Magic Troutを2026年8月23日・相模湖吉野ワンドでの根掛かりによるLOSTへ更新し、過去ログは維持
+- LINE SYSTEMを新品、満巻き、使用0釣行、裏巻き未実施へ更新
+- PEにシュッの現在状態を2026年8月24日施工・施工後0釣行へ更新し、2026年8月19日の旧ライン施工履歴を維持
+- 使用リールが各釣行ログで確認できないため、5501CS Rocket各パーツの既存カウンターを維持
+- バージョンとキャッシュ番号を1.2.5、更新日を2026.08.24へ更新
+
 ## v1.2.4 — 2026-08-21
 
 ### Added
