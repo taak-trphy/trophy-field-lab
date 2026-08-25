@@ -41,6 +41,7 @@ function maintenanceView(){
       <header class="maintenance-subhead"><span>LINE MAINTENANCE</span><h3>${esc(line.targetLine||'')}</h3></header>
       <dl class="line-maintenance-grid">
         <div><dt>PE COATING</dt><dd>${esc(line.item||'—')}</dd></div>
+        <div><dt>TARGET LINE</dt><dd>${esc(line.targetLine||'—')}</dd></div>
         <div><dt>LAST SERVICE</dt><dd>${esc(line.lastPECoating||'—')}</dd></div>
         <div><dt>TRIPS SINCE</dt><dd>${esc(tripText(line.lineTripsSince))}</dd></div>
         <div><dt>EST. REMAINING</dt><dd>${esc(line.estimatedRemaining||'—')}</dd></div>
@@ -167,6 +168,6 @@ async function loadData({initial=false}={}){
     if(initial)app.innerHTML=`<div class="error"><strong>データを読み込めませんでした。</strong><p>${esc(err.message)}</p></div>`;
   }
 }
-const currentBuild='1.2.4';
+const currentBuild='1.2.5';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});
