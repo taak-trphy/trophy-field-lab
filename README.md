@@ -2,7 +2,7 @@
 
 TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## Version 1.2.6
+## Version 1.2.7
 
 - `data.json` を唯一の記録データとして使用
 - FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示
@@ -11,6 +11,14 @@ TROPHYによる、東京湾奥ビッグベイトの個人フィールドアー�
 - GitHub Pagesでは全ファイルをリポジトリのルートへアップロード
 
 ## What's New
+
+### 2026.09
+
+- 2026.09.01 平和島運河・昭和島西側／大森東避難橋〈見晴らし橋〉周辺ログ
+- 平和島運河・昭和島西側のFIELD KNOWLEDGE追加
+- 貧酸素マップと現場の捕食条件を重ねる検証項目
+- 5501CS Rocket再整備、G HANDLE再装着後の状態記録
+- MAX POWER PE6を新品交換後2釣行、推定残量約95mへ更新
 
 ### 2026.08
 
