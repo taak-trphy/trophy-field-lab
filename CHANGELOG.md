@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v1.2.10 — 2026-09-26
+
+### Added
+
+- 2026.09.25「勝島運河・鮫洲橋〜京浜運河合流」のFIELD LOG
+- ANTARES DC MD XG LEFTの初実戦データ
+- SWIMBAIT PE4号100m／下巻きなしの実戦データ
+- TiNY KLASH、TiNY JOKER、MAGDRAFT 6inchの勝島実戦記録
+- 軽量ビッグベイト用キャスト荷重のOPERATION
+- ANTARESのDC設定検証項目
+- 純正ハンドルの実戦評価
+- DCユニット固定ボルトの状態をMAINTENANCEへ追加
+
+### Changed
+
+- ANTARES DC MDの状態を「実釣未使用」から「初実戦完了／継続検証」へ変更
+- ANTARESの実戦使用回数を1へ更新
+- SWIMBAIT PE4号の使用後釣行数を1へ更新
+- 純正ハンドル評価を空巻きのみから実戦評価へ更新
+- ハンドル候補を95〜100mm中心へ整理
+- 勝島運河・鮫洲橋の観測回数を1件追加
+- HOMEのCURRENT CONCLUSION／NEXT ACTIONSへANTARES初実戦結果を統合
+- version、updated、sessionCount、キャッシュ番号を最新版へ同期更新
+- 5501CS Rocket／MAX POWER PE6のカウンター、既存ログ・導入時履歴を保持
+
+
 ## v1.2.9 — 2026-09-25
 
 ==================================================

@@ -2,7 +2,7 @@
 
 TROPHYによる、東京湾奥ビッグベイトの個人フィールドアーカイブ。
 
-## Version 1.2.9
+## Version 1.2.10
 
 - `data.json` を唯一の記録データとして使用
 - FIELD / STRATEGY / OPERATION / TACKLE / LOG / LIBRARYを同じデータから表示
@@ -13,6 +13,11 @@ TROPHYによる、東京湾奥ビッグベイトの個人フィールドアー�
 ## What's New
 
 ### 2026.09
+
+- 2026.09.25 勝島運河・鮫洲橋〜京浜運河合流／ANTARES初実戦ログ
+- ANTARES・SWIMBAIT PE4号100m（下巻きなし）を使用1釣行へ更新
+- XB最大ブレーキ、軽量キャスト荷重、純正ハンドル実戦評価・95〜100mm候補を反映
+- DC固定ボルトの軽微な溝損傷・未取り外しを記録
 
 - 2026.09.25 23 ANTARES DC MD XG LEFT導入（新品・実釣未使用）
 - SWIMBAIT PE SMP X8 4号100mは購入済み・未巻き、Avani Shock Leader SMP［NYLON］40lbを登録
