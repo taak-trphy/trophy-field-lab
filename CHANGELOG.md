@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## v1.2.9 — 2026-09-25
+
+==================================================
+
+### Added
+
+- 23 ANTARES DC MD XG LEFTをTACKLEへ追加
+- VARIVAS SWIMBAIT PE SMP X8 4号100mを追加
+- VARIVAS Avani Shock Leader SMP［NYLON］40lbを追加
+- ANTARES、5501CS Rocket、6500Cの役割分担を追加
+- ANTARESの海水・汽水使用後ルーティンを追加
+- 初回実釣の検証項目を追加
+
+### Changed
+
+- 操作系ビッグベイト用タックルをANTARES中心へ拡張
+- TiNY JOKER、TiNY KLASH、MAGDRAFT、重めのワームの担当タックルを明確化
+- K9は5501CS Rocketを主力とし、ANTARESではボートの近〜中距離に限定
+- 純正ハンドルは実釣評価まで継続使用
+- 新品・実釣未使用、ライン未巻き、海水対策・内部分解・ケミカル未施工を明記
+- TACKLE詳細を折りたたみ表示で追加。既存ログ・履歴・釣行数・カウンターを維持
+- バージョンとキャッシュ番号を1.2.9、更新日を2026.09.25へ更新
+
 ## v1.2.8 — 2026-09-14
 
 ### Added
