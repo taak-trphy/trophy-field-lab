@@ -1,5 +1,34 @@
 # CHANGELOG
 
+## v1.2.11 — 2026-10-01
+
+### Added
+
+- 2026.10.01 勝島運河FIELD LOG
+- DRT VARIAL 100導入
+- VARIAL 100分解・内部確認データ
+- White J-FAT Knob ORDERED
+- MAKTUB MAH-90 ORDERED
+- ANTARES K9＋60lbリーダー運用方針
+- 5501ハンドルナット／Eリング／ドライブシャフト検証
+- VARIAL 100初実戦評価
+
+### Changed
+
+- ANTARESハンドルを純正からVARIAL 100へ更新
+- ANTARESのK9対応範囲を拡張
+- 5501のドライブシャフト状態を「要交換」ではなく「要診断」に整理
+- ハンドル構成をANTARES＝100mm、5501＝MAKTUB 90検証予定へ更新
+- PURCHASE / ORDER STATUS更新
+- HOME CURRENT CONCLUSION更新
+- NEXT ACTIONS更新
+- version、updated、sessionCount、キャッシュ番号を最新版へ同期更新
+
+- ANTARES／PE4号を使用後2釣行へ更新。100mは導入時巻量、ライン切断後の残量は未記録。
+- White J-FAT／MAH-90は未到着、BALBOAは未購入、潤滑施工は未確認として区別。
+- 5501CS Rocket／MAX POWER PE6のカウンター、既存ログ・過去履歴を維持。
+
+
 ## v1.2.10 — 2026-09-26
 
 ### Added
