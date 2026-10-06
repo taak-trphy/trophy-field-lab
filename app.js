@@ -58,7 +58,18 @@ function tackleIntroductionsView(){
     ${item.sections.map(group=>`<details class="maintenance-history"><summary><span>${esc(group.title)}</span><b>詳細</b></summary><div class="archive-body">${group.blocks.map(block=>block.type==='heading'?`<h4>${esc(block.text)}</h4>`:block.type==='list'?lineList(block.items):`<p>${esc(block.text)}</p>`).join('')}</div></details>`).join('')}
   </section>`).join('');
 }
-function tackleView(){const lc=data.tackle.lineLifecycle||{};const lineLogs=(lc.logs||[]).map(l=>`<div class="entry"><strong>${esc(l.title)}</strong><p>${esc(l.date)}</p><p>${esc(l.note)}</p><span class="status">LINE LOG</span></div>`).join('');return `${intro('05','TACKLE','所有物ではなく、役割・信頼性・ライフサイクルで整理する。')}${section('01','判断基準',lineList(data.tackle.philosophy||[]),'PHILOSOPHY')}${section('02','現在のシステム',`<div class="spec-grid">${data.tackle.system.map(i=>`<div class="spec-item"><span>${esc(i.label)}</span><strong>${esc(i.name)}</strong><p>${esc(i.note)}</p></div>`).join('')}</div>${tackleIntroductionsView()}`,'CURRENT SYSTEM')}${section('03','ルアー構成',`<div class="tackle-groups">${data.tackle.lures.map(g=>`<div class="tackle-group"><span>${esc(g.group)}</span><strong>${esc(g.items)}</strong><p>${esc(g.note)}</p></div>`).join('')}</div>`,'LURE SYSTEM')}${section('04','ライン・ライフサイクル',`<p class="lead-copy">${esc(lc.current||'')}</p>${lineList(lc.rules||[])}${lineLogs?`<div class="entry-list">${lineLogs}</div>`:''}${(lc.nextCandidates||[]).length?`<div class="candidate-line"><span>NEXT CANDIDATES</span><strong>${esc(lc.nextCandidates.join(' / '))}</strong></div>`:''}`,'RELIABILITY / LINE LOG')}<section class="section"><div class="section-head"><span class="section-no">05</span><h2>メンテナンス</h2><span class="section-count">MAINTENANCE</span></div>${maintenanceView()}</section>${section('06','フィールドギア',`<div class="entry-list">${data.tackle.fieldGear.map(g=>`<div class="entry"><strong>${esc(g.item)}</strong><p>${esc(g.note)}</p><span class="status">${esc(g.status)}</span></div>`).join('')}</div>`,'CARRY SYSTEM')}${section('07','使用保留・確認事項',lineList(data.tackle.holds),'HOLD / CHECK')}`}
+function lureGuideView(){
+  const g=data.tackle.lureGuide;if(!g)return '';
+  return `<div class="lure-guide"><p class="lead-copy">${esc(g.intro)}</p>
+    <h3>最初の選び方</h3><dl class="lure-choice-list">${g.choices.map(c=>`<div><dt>${esc(c.need)}</dt><dd><strong>${esc(c.lures)}</strong><p>${esc(c.note)}</p></dd></div>`).join('')}</dl>
+    <h3>共通の基本</h3>${lineList(g.rules)}
+    <h3>ルアー別の特徴と使い所</h3><p class="guide-caption">基本操作と使い所は検証の出発点。実釣で確認したことは各項目の記録欄に分ける。</p>
+    <nav class="lure-guide-index" aria-label="ルアー基本ガイドの目次">${g.entries.map(e=>`<a href="#guide-${esc(e.id)}" data-lure-guide-link="guide-${esc(e.id)}">${esc(e.name)}</a>`).join('')}</nav>
+    ${g.entries.map(e=>`<details class="lure-guide-entry" id="guide-${esc(e.id)}"><summary><strong>${esc(e.name)}</strong><span>${esc(e.role)}</span></summary><div class="lure-guide-body"><dl>${[['特徴',e.feature],['基本操作',e.basic],['使い所',e.use],['確認すること',e.check],['本人の記録',e.record]].map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>${e.sources.length?`<p class="guide-sources">${e.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' / ')}</p>`:''}</div></details>`).join('')}
+    <h3>これから試す発展案</h3><div class="entry-list">${g.experiments.map(e=>`<article class="entry"><strong>${esc(e.title)}</strong><span class="status">${esc(e.status)}</span><p>${esc(e.text)}</p>${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">使用例の出典</a>`:''}</article>`).join('')}</div></div>`;
+}
+
+function tackleView(){const lc=data.tackle.lineLifecycle||{};const lineLogs=(lc.logs||[]).map(l=>`<div class="entry"><strong>${esc(l.title)}</strong><p>${esc(l.date)}</p><p>${esc(l.note)}</p><span class="status">LINE LOG</span></div>`).join('');return `${intro('05','TACKLE','所有物ではなく、役割・信頼性・ライフサイクルで整理する。')}${section('01','判断基準',lineList(data.tackle.philosophy||[]),'PHILOSOPHY')}${section('02','現在のシステム',`<div class="spec-grid">${data.tackle.system.map(i=>`<div class="spec-item"><span>${esc(i.label)}</span><strong>${esc(i.name)}</strong><p>${esc(i.note)}</p></div>`).join('')}</div>${tackleIntroductionsView()}`,'CURRENT SYSTEM')}${section('03','ルアー基本ガイド',`${lureGuideView()}<details class="maintenance-history"><summary><span>カラーと個別設定の一覧</span><b>所有ルアー</b></summary><div class="tackle-groups">${data.tackle.lures.map(g=>`<div class="tackle-group"><span>${esc(g.group)}</span><strong>${esc(g.items)}</strong><p>${esc(g.note)}</p></div>`).join('')}</div></details>`,'LURE SYSTEM')}${section('04','ライン・ライフサイクル',`<p class="lead-copy">${esc(lc.current||'')}</p>${lineList(lc.rules||[])}${lineLogs?`<div class="entry-list">${lineLogs}</div>`:''}${(lc.nextCandidates||[]).length?`<div class="candidate-line"><span>NEXT CANDIDATES</span><strong>${esc(lc.nextCandidates.join(' / '))}</strong></div>`:''}`,'RELIABILITY / LINE LOG')}<section class="section"><div class="section-head"><span class="section-no">05</span><h2>メンテナンス</h2><span class="section-count">MAINTENANCE</span></div>${maintenanceView()}</section>${section('06','フィールドギア',`<div class="entry-list">${data.tackle.fieldGear.map(g=>`<div class="entry"><strong>${esc(g.item)}</strong><p>${esc(g.note)}</p><span class="status">${esc(g.status)}</span></div>`).join('')}</div>`,'CARRY SYSTEM')}${section('07','使用保留・確認事項',lineList(data.tackle.holds),'HOLD / CHECK')}`}
 function logMonthKey(l){if((l.dateLabel||'').includes('7月某日'))return '2026-07';return String(l.date||'').slice(0,7)}
 function logArchiveItem(l,index){
   const tags=[l.tide,l.phase,l.water,l.bait].filter(v=>v&&v!=='記録なし');
@@ -155,6 +166,7 @@ function restoreRoute({replace=false,scroll=true}={}){
 document.querySelector('.menu-panel nav').addEventListener('click',e=>{const b=e.target.closest('button[data-view]');if(b)navigate(b.dataset.view)});
 document.addEventListener('click',e=>{const l=e.target.closest('[data-view-link]');if(l){e.preventDefault();navigate(l.dataset.viewLink)}});
 app.addEventListener('click',e=>{
+  const guideLink=e.target.closest('[data-lure-guide-link]');if(guideLink){e.preventDefault();const entry=document.getElementById(guideLink.dataset.lureGuideLink);if(entry){entry.open=true;entry.scrollIntoView({behavior:'smooth',block:'start'})}return}
   const f=e.target.closest('[data-field-id]');if(f){navigate('field',{fieldId:f.dataset.fieldId});return}
   if(e.target.closest('[data-back-field]')){navigate('field');return}
   const b=e.target.closest('[data-filter-key]');if(b){activeFilters[b.dataset.filterKey]=b.dataset.filterValue;render('strategy',{scroll:false});return}
@@ -175,6 +187,6 @@ async function loadData({initial=false}={}){
     if(initial)app.innerHTML=`<div class="error"><strong>データを読み込めませんでした。</strong><p>${esc(err.message)}</p></div>`;
   }
 }
-const currentBuild='1.2.13';
+const currentBuild='1.2.14';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});
