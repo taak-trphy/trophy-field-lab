@@ -12,7 +12,25 @@ function fieldSuitability(items){return `<div class="entry-list">${items.map(i=>
 
 function sourceLinks(items){return (items||[]).length?`<p class="guide-sources">${items.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`).join(' / ')}</p>`:''}
 function explorationView(n){if(!n)return '';const p=n.parking;return `<dl class="strategy-table">${[['根拠・確認範囲',n.basis],['探索仮説',n.hypothesis],['比較する条件',n.test],['足場・利用条件',n.access],['留意点',n.caution]].filter(([,v])=>v).map(([k,v])=>`<div class="strategy-row"><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>${p?`<div class="entry"><strong>駐車場候補：${esc(p.name)}</strong><p>${esc(p.address)}／${esc(p.count)}台／24時間入出庫可</p><p>${esc(p.fee)}</p><p>掲載確認 ${esc(p.checked)}：${esc(p.note)}</p><a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">駐車場の公式情報 ↗</a></div>`:''}${sourceLinks(n.sources)}`}
-function konoshiroView(){const k=data.strategy.konoshiro;if(!k)return '';return section('探索','コノシロ探索ノート',`<p class="lead-copy">${esc(k.intro)}</p><h3>確認例の共通項</h3>${lineList(k.common)}<h3>未検証の仮説</h3>${lineList(k.hypotheses)}<h3>記録と判断のルール</h3>${lineList(k.limits)}<h3>現地で残すこと</h3>${lineList(k.record)}${sourceLinks(k.sources)}<div class="entry-list">${k.candidates.map(n=>`<details class="lure-guide-entry"><summary><strong>${esc(n.name)}</strong><span>探索候補・${n.ownerObservation?'本人の現地観察あり':'群れは未検証'}</span></summary><div class="lure-guide-body"><button class="text-button" data-field-id="${esc(n.fieldId)}">FIELDを開く →</button>${explorationView(n)}</div></details>`).join('')}</div>`,`${k.candidates.length} CANDIDATES / ${k.updated}`)}
+function konoshiroView(){
+ const k=data.strategy.konoshiro;if(!k)return '';
+ const access={
+  'shinnakagawa-ichinoe':'足場・駐車場：未確認',
+  'shinnakagawa-mouth':'足場・駐車場：未確認',
+  'sumida-onagi-mouth':'立ち位置・駐車場：未確認',
+  'harumi-reimei':'投げ釣りの制限あり／駐車場：未整理',
+  'shibaura-minami':'8〜21時／投げ方の制限あり／専用駐車場なし',
+  'keihinjima-konoshiro':'釣り区間・投げ方：要確認／駐車場：未整理',
+  'heikyu-konoshiro':'東詰に遊歩道／西側は途切れる',
+  'oshima-west-konoshiro':'緑橋工事あり／足場：未確認',
+  'sendaihori-west-konoshiro':'護岸に散歩道／柵高・落差：未確認',
+  'kamejima-inner-konoshiro':'入れるテラス区間・足場：未確認',
+  'tachiai-mouth-konoshiro':'橋の工事・高い柵の記録／現況：未確認',
+  'morigasaki-flat':'低い足場：本人確認／立入り・駐車場：未確認',
+  'shibaura-outlet':'足場・立入り・駐車場：未確認'
+ };
+ return section('探索','コノシロ探索ノート',`<p class="lead-copy">13候補の比較メモ。狙う理由は探索仮説です。場所を開くと、根拠・確認方法・アクセスの詳細を読めます。</p><div class="entry-list">${k.candidates.map(n=>`<details class="lure-guide-entry konoshiro-candidate"><summary><strong>${esc(n.name)}</strong><span class="candidate-reason">狙う理由：${esc(n.hypothesis.split('。')[0])}。</span><span class="candidate-access">${esc(access[n.fieldId]||'足場・駐車場：未確認')}${n.parking?`／駐車場候補 ${esc(n.parking.count)}台`:''}</span></summary><div class="lure-guide-body"><p>${n.ownerObservation?'本人の現地観察あり':'探索候補'}／この地点の大型の群れは未確認</p><button class="text-button" data-field-id="${esc(n.fieldId)}">FIELDを開く →</button>${explorationView(n)}</div></details>`).join('')}</div><details class="lure-guide-entry"><summary><strong>探索の考え方・記録のルール</strong><span>共通項、未検証の仮説、資料と現地記録</span></summary><div class="lure-guide-body"><p>${esc(k.intro)}</p><h3>確認例の共通項</h3>${lineList(k.common)}<h3>未検証の仮説</h3>${lineList(k.hypotheses)}<h3>記録と判断のルール</h3>${lineList(k.limits)}<h3>現地で残すこと</h3>${lineList(k.record)}${sourceLinks(k.sources)}</div></details>`,`${k.candidates.length} CANDIDATES / ${k.updated}`)
+}
 
 function fieldIndexView(){return `${intro('02','FIELD','場所ごとの現在の知見、未解明点、シーズン別ストラテジー、過去ログを同じ導線で見る。')}<section class="section"><div class="editorial-list">${data.fields.map((f,i)=>`<button class="editorial-row" data-field-id="${esc(f.id)}"><span class="index">${String(i+1).padStart(2,'0')}</span><div><strong>${esc(f.name)}</strong><p>${esc(f.summary)}</p></div><span class="meta-right">${logsForField(f.id).length} LOG<br>${f.observations} OBS.</span></button>`).join('')}</div></section>`}
 function fieldDetailView(id){const f=fieldById(id);if(!f)return fieldIndexView();const logs=logsForField(id);return `<div class="back-row"><button class="text-button" data-back-field>← FIELD INDEX</button></div>${intro('02','FIELD','場所ごとの観測と実釣記録。')}<section class="field-identity"><p class="eyebrow">FIELD PROFILE</p><h2>${esc(f.name)}</h2><p>${esc(f.summary)}</p></section><div class="field-stats"><div class="field-stat"><b>${f.observations}</b><span>観測回数</span></div><div class="field-stat"><b>${logs.length}</b><span>関連ログ</span></div><div class="field-stat"><b>${esc(f.strong.split('。')[0])}</b><span>強い条件</span></div><div class="field-stat"><b>${(f.tags||[])[0]||'-'}</b><span>分類</span></div></div>${section('条件','候補にする条件・見直す条件',fieldSuitability((data.strategy.fieldSuitability||[]).filter(i=>i.fieldId===id)))}${f.exploration?section('探索','コノシロ探索・アクセス',explorationView(f.exploration),'HYPOTHESIS / ACCESS'):''}${section('01','現在の狙い',`<div class="knowledge-grid"><div class="knowledge-col"><h3>強い条件</h3><p>${esc(f.strong)}</p></div><div class="knowledge-col"><h3>狙い</h3><p>${esc(f.target)}</p></div></div>`)}${section('02','シーズン別ストラテジー',`<dl class="strategy-table">${(f.seasonStrategy||[]).map(i=>`<div class="strategy-row"><dt>${esc(i.label)}</dt><dd>${esc(i.text)}</dd></div>`).join('')}</dl>`)}${section('03','知見と未解明',`<div class="knowledge-grid"><div class="knowledge-col"><h3>分かったこと</h3>${lineList(f.known)}</div><div class="knowledge-col"><h3>まだ分からないこと</h3>${lineList(f.unknown)}</div></div>`)}${section('04','この場所の釣行履歴',logs.length?`<div class="log-list">${logs.map(logRow).join('')}</div>`:'<p>この場所の釣行ログはまだありません。</p>','NEWEST FIRST')}`}
@@ -193,6 +211,6 @@ async function loadData({initial=false}={}){
     if(initial)app.innerHTML=`<div class="error"><strong>データを読み込めませんでした。</strong><p>${esc(err.message)}</p></div>`;
   }
 }
-const currentBuild='1.2.17';
+const currentBuild='1.2.18';
 if(sessionStorage.getItem('trophyBuild')!==currentBuild){sessionStorage.setItem('trophyBuild',currentBuild)}
 loadData({initial:true});
