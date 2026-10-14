@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "TROPHY FIELD LAB",
-    "version": "1.2.18",
+    "version": "1.2.19",
     "updated": "2026.10.14",
     "sessionCount": 27,
     "rules": [
@@ -220,7 +220,9 @@
           "label": "冬",
           "text": "通常リップでレンジを入れ、橋脚裏と壁際の緩流帯を長く使う。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "芝浦・港南・天王洲",
@@ -269,7 +271,9 @@
           "label": "冬",
           "text": "満潮前後の高水位で、橋台や壁際の緩流帯を通常リップで通す。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "平和島運河・昭和島西側",
@@ -311,7 +315,9 @@
           "label": "次回検証",
           "text": "下げ始めの実流速とベイトの逃走方向を記録し、橋の影、護岸の角、流れの剥がれ、岸際の緩流帯を優先する。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "隅田川下流",
@@ -349,7 +355,9 @@
           "label": "冬",
           "text": "流れが緩むタイミングと深い筋を通常リップで探る。"
         }
-      ]
+      ],
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。"
     },
     {
       "name": "小名木川・旧中川・亀島川系",
@@ -388,7 +396,9 @@
           "label": "冬",
           "text": "深みと橋台際を低速で探り、反応がなければ早めに切る。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "六郷・多摩川下流",
@@ -414,7 +424,9 @@
           "label": "現在",
           "text": "K9中心の岸釣りでは対象外。再訪しない。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "荒川",
@@ -464,7 +476,9 @@
           "label": "冬",
           "text": "深い筋と流速の落ちる場所を低速で探る。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "多摩川・くじら池運動公園",
@@ -490,7 +504,9 @@
           "label": "春",
           "text": "下流側からのデッドウォークと、足元まで追わせるコースを検証。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "name": "目黒川河口",
@@ -518,7 +534,9 @@
           "label": "初回調査",
           "text": "釣る前に足場、水深、護岸、後方スペース、駐車場を確認する。"
         }
-      ]
+      ],
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。"
     },
     {
       "name": "相模湖",
@@ -565,7 +583,9 @@
           "label": "次回調査",
           "text": "秋山川側から出船し、桂川、バックウォーター、流れ込みを重点的に調査する。"
         }
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "id": "hanahata",
@@ -588,7 +608,9 @@
       "unknown": [
         "自身の釣果・バイトの有無、昼のルアー全体と操作順。",
         "サカマタの感覚改善に対するフック・リール・ライン・風・流れの影響。"
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "id": "sumida-shioiri",
@@ -613,7 +635,9 @@
       "unknown": [
         "釣果・明確なバイトの有無、ベイトの移動理由。",
         "加重の個別効果、テール増量・挿入位置によるフォール姿勢と泳ぎの変化。"
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "id": "harumi-reimei",
@@ -656,7 +680,10 @@
             "url": "https://www.city.chuo.lg.jp/documents/14710/240125gijiyousi.pdf"
           }
         ]
-      }
+      },
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "kamejima-confluence",
@@ -675,7 +702,9 @@
       ],
       "unknown": [
         "合流の流れと魚の反応の関係は仮説。大野ゆうきの釣果は外部情報として扱う。"
-      ]
+      ],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "id": "nakagawa-kameda",
@@ -694,7 +723,9 @@
       ],
       "unknown": [
         "動画の地点一致と、自身が釣りを成立させられる条件は未確認。"
-      ]
+      ],
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。"
     },
     {
       "id": "harumi-rinkai",
@@ -716,7 +747,9 @@
         "ベイトの魚種・サイズと、魚が反応するレンジ。",
         "他者の釣果と自身の操作で異なっていた条件。"
       ],
-      "seasonStrategy": []
+      "seasonStrategy": [],
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり"
     },
     {
       "id": "shinnakagawa-ichinoe",
@@ -742,8 +775,8 @@
       "exploration": {
         "fieldId": "shinnakagawa-ichinoe",
         "name": "新中川・一之江橋周辺",
-        "basis": "本人の過去釣行・魚目撃あり。新中川上流寄りのコノシロ報告はあるが、この指定地点のコノシロ確認ではない。",
-        "hypothesis": "橋の明暗に加え、その前後の緩い岸際に群れが残るか。",
+        "basis": "魚種不明の本人目撃が中心で、この地点をコノシロ候補とする根拠が薄いため探索ノートから除外。一般の再訪候補としてFIELDに保存。",
+        "hypothesis": "一般の魚・ベイトの有無と足場を確認する。魚種が確認できるまでコノシロ仮説とはしない。",
         "test": "水位のある上げ後半・満潮前後と下げ始めを比較。群れの端・岸との隙間・泳層を見る。",
         "access": "指定座標35.702556, 139.884278。細かな足場・キャスト可否・駐車場は未確認。",
         "sources": [
@@ -752,7 +785,11 @@
             "url": "https://note.com/youtarou_ot/n/n3607cd113fad"
           }
         ]
-      }
+      },
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり",
+      "konoshiroScope": "excluded",
+      "konoshiroScopeNote": "魚種不明の本人目撃が中心で、この地点をコノシロ候補とする根拠が薄いため探索ノートから除外。一般の再訪候補としてFIELDに保存。"
     },
     {
       "id": "shinnakagawa-mouth",
@@ -790,7 +827,10 @@
             "url": "https://note.com/youtarou_ot/n/n3607cd113fad"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "sumida-onagi-mouth",
@@ -824,7 +864,10 @@
             "url": "https://www.kensetsu.metro.tokyo.lg.jp/river/kanri/guide"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "shibaura-minami",
@@ -862,7 +905,10 @@
             "url": "https://tokyo-south-seaside-parks.com/other-parks/"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "keihinjima-konoshiro",
@@ -896,7 +942,10 @@
             "url": "https://web.tsuribito.co.jp/beginner/winter-seabass-tokyowan"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "heikyu-konoshiro",
@@ -943,7 +992,10 @@
             "url": "https://www.mokuzai-tonya.jp/mizu-no-miyako/article/11108"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "oshima-west-konoshiro",
@@ -967,8 +1019,8 @@
       "exploration": {
         "fieldId": "oshima-west-konoshiro",
         "name": "大島川西支川・福島橋／御船橋周辺",
-        "basis": "感潮河川であることを公式に確認。今回、具体的な大型群れの報告は確認できず。",
-        "hypothesis": "細い水路の屈曲・河川接続部で群れが一時的にまとまるか。",
+        "basis": "感潮水路という条件以外のコノシロの根拠が薄く、工事もあるため探索ノートから除外。一般の下見候補としてFIELDに保存。",
+        "hypothesis": "一般の魚・ベイトの有無と足場を確認する。魚種が確認できるまでコノシロ仮説とはしない。",
         "test": "入口側と少し入った曲がりを比較。緑橋は工事のため優先度を下げ、福島橋・御船橋側から下見。",
         "access": "緑橋架替工事の掲載工期は2024.06.27〜2027.03.31。歩道の連続性・柵高・水面までの落差・キャスト可否は未確認。",
         "parking": {
@@ -990,7 +1042,11 @@
             "url": "https://www.city.koto.lg.jp/470208/machizukuri/dorohashi/kojigenba/midori.html"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "excluded",
+      "konoshiroScopeNote": "感潮水路という条件以外のコノシロの根拠が薄く、工事もあるため探索ノートから除外。一般の下見候補としてFIELDに保存。"
     },
     {
       "id": "sendaihori-west-konoshiro",
@@ -1037,7 +1093,10 @@
             "url": "https://koto-kanko.jp/tourism/detail_spot.php?sid=S00103"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "kamejima-inner-konoshiro",
@@ -1084,7 +1143,10 @@
             "url": "https://www.kensetsu.metro.tokyo.lg.jp/river/kankyo/ikimono/river/river_suikei_arakawa/river_kamejimagawa"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "tachiai-mouth-konoshiro",
@@ -1131,7 +1193,10 @@
             "url": "https://www.city.shinagawa.tokyo.jp/PC/kankyo/kankyo-toshiseibi/kankyo-toshiseibi-project/kankyo-toshiseibi-project-tachiaikatsushima/20260601131217.html"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "morigasaki-flat",
@@ -1176,7 +1241,10 @@
           }
         ],
         "caution": "地図上の雨水放流口と通常の処理水放流を同一視しない。このピンの常時放流・稼働条件は未確認。雨後に必ず良くなる、栄養や酸素が必ず豊富、深い溝があるとは断定しない。"
-      }
+      },
+      "visitStatus": "visited",
+      "visitStatusBasis": "本人の釣行ログ・現地観察の記録あり",
+      "konoshiroScope": "candidate"
     },
     {
       "id": "shibaura-outlet",
@@ -1218,7 +1286,10 @@
             "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/shisetsu/44986"
           }
         ]
-      }
+      },
+      "visitStatus": "candidate",
+      "visitStatusBasis": "訪問記録なし。探索・下見の候補として保存。",
+      "konoshiroScope": "candidate"
     }
   ],
   "strategy": {
@@ -1380,7 +1451,7 @@
     ],
     "konoshiro": {
       "updated": "2026.10.14",
-      "intro": "公開確認例から作る探索仮説。現在の群れの目撃情報や、釣れる確率の統計ではない。",
+      "intro": "公開確認例と生態・地形から組み立てた探索仮説。地点別の件数や天候を集計した統計分析、接岸確率のランキングではありません。",
       "common": [
         "春〜秋は河口・河川の浅所、内湾の汽水域を利用。冬には湾口の深場へ移るという生態資料がある。",
         "東京湾の秋〜初冬の報告は河口だけでなく支流・運河にもある。年・地域で入り方が違う。",
@@ -1428,20 +1499,6 @@
         }
       ],
       "candidates": [
-        {
-          "fieldId": "shinnakagawa-ichinoe",
-          "name": "新中川・一之江橋周辺",
-          "basis": "本人の過去釣行・魚目撃あり。新中川上流寄りのコノシロ報告はあるが、この指定地点のコノシロ確認ではない。",
-          "hypothesis": "橋の明暗に加え、その前後の緩い岸際に群れが残るか。",
-          "test": "水位のある上げ後半・満潮前後と下げ始めを比較。群れの端・岸との隙間・泳層を見る。",
-          "access": "指定座標35.702556, 139.884278。細かな足場・キャスト可否・駐車場は未確認。",
-          "sources": [
-            {
-              "title": "2025年の旧江戸川・新中川の釣行者報告",
-              "url": "https://note.com/youtarou_ot/n/n3607cd113fad"
-            }
-          ]
-        },
         {
           "fieldId": "shinnakagawa-mouth",
           "name": "新中川・瑞穂大橋下流〜旧江戸川合流",
@@ -1548,33 +1605,6 @@
             {
               "title": "現地報告｜平久橋・遊歩道（2026年8月掲載）",
               "url": "https://www.mokuzai-tonya.jp/mizu-no-miyako/article/11108"
-            }
-          ]
-        },
-        {
-          "fieldId": "oshima-west-konoshiro",
-          "name": "大島川西支川・福島橋／御船橋周辺",
-          "basis": "感潮河川であることを公式に確認。今回、具体的な大型群れの報告は確認できず。",
-          "hypothesis": "細い水路の屈曲・河川接続部で群れが一時的にまとまるか。",
-          "test": "入口側と少し入った曲がりを比較。緑橋は工事のため優先度を下げ、福島橋・御船橋側から下見。",
-          "access": "緑橋架替工事の掲載工期は2024.06.27〜2027.03.31。歩道の連続性・柵高・水面までの落差・キャスト可否は未確認。",
-          "parking": {
-            "name": "リパーク江東福住1丁目第5",
-            "url": "https://www.repark.jp/parking_user/time/result/detail/?park=REP0027126",
-            "address": "江東区福住1-4-4",
-            "count": 2,
-            "fee": "20:00〜08:00 最大400円。通常30分300円。",
-            "checked": "2026.10.14",
-            "note": "掲載料金。現在の空車は未確認。夜間枠より前・後の料金は別途加算。現地看板を確認。"
-          },
-          "sources": [
-            {
-              "title": "東京都｜感潮河川と水位管理区間",
-              "url": "https://www.kensetsu.metro.tokyo.lg.jp/river/kanri/guide"
-            },
-            {
-              "title": "江東区｜緑橋架替工事",
-              "url": "https://www.city.koto.lg.jp/470208/machizukuri/dorohashi/kojigenba/midori.html"
             }
           ]
         },
@@ -1703,6 +1733,61 @@
               "url": "https://www.gesui.metro.tokyo.lg.jp/pr/kouhou/shisetsu/44986"
             }
           ]
+        }
+      ],
+      "scope": "新中川全域を対象にした仮説ではありません。コノシロ探索では瑞穂大橋下流〜旧江戸川合流の入口・脇の緩流部だけを候補にしています。一之江橋と亀田児童遊園周辺はFIELDの一般候補です。",
+      "synthesis": [
+        {
+          "id": "entry",
+          "title": "本流・海から入れる入口と、群れが残る緩流部",
+          "reason": "河川・支流の公開確認例から、入り口とその脇の緩い流れをセットで探す。潮汐があるだけでは候補の根拠として弱い。",
+          "check": "上げの進入、下げの退出と残留を比較。岸際と本流側の泳層を分けて記録する。",
+          "limit": "以下の支流・合流地点で大型群れが確認されたという意味ではない。旧い魚種調査と地形からの推定を区別する。",
+          "fieldIds": [
+            "shinnakagawa-mouth",
+            "sumida-onagi-mouth",
+            "heikyu-konoshiro",
+            "sendaihori-west-konoshiro",
+            "kamejima-inner-konoshiro",
+            "tachiai-mouth-konoshiro"
+          ]
+        },
+        {
+          "id": "open-canal",
+          "title": "開けた水面と運河が接する岸際",
+          "reason": "公的採集記録や過去の釣行・取材を足掛かりに、開けた側と内側の寄り方を比較する。岸から届く群れかを現地で確かめる。",
+          "check": "外向きと内向きの水面を同じ潮で比較。少数のサビキ釣果と大型の密集群れを分ける。",
+          "limit": "過去の確認は現在の接岸や大型群れを保証しない。投げ方の制限がある場所は観察・下見を優先。",
+          "fieldIds": [
+            "harumi-reimei",
+            "shibaura-minami",
+            "keihinjima-konoshiro"
+          ]
+        },
+        {
+          "id": "outlet",
+          "title": "放流と潮流の境目、浅場の出入り口",
+          "reason": "放水口の脇や流れの境界に群れが残るかを試す地形仮説。森ヶ崎の低い足場・浅場という本人所感を比較の起点にする。",
+          "check": "放流正面・両脇・離れた護岸を比較。放流の有無と潮位、群れの退出や泳層変化を記録する。",
+          "limit": "両地点のコノシロ実績は未確認。放流の種類・継続、水温、深い逃げ場の存在も未確認。",
+          "fieldIds": [
+            "morigasaki-flat",
+            "shibaura-outlet"
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "label": "季節",
+          "text": "春〜秋の浅所・汽水域利用と秋〜初冬の公開報告を起点にする。年と区間の違いは未集計。"
+        },
+        {
+          "label": "潮",
+          "text": "上げの進入／下げの残留／潮止まりを比較。大潮や下げを一律の正解にしない。"
+        },
+        {
+          "label": "天候",
+          "text": "前24〜72時間の雨、岸への風の当たり方、水温変化を記録。集まりやすい閾値はまだ不明。"
         }
       ]
     }
